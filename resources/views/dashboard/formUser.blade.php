@@ -12,14 +12,14 @@
                         <div class="row">
                             <div class="col">
                                 <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Username</label>
-                                    <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+                                    <label for="exampleFormControlInput1" class="form-label">Nama</label>
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="name" required>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Nomor HP</label>
-                                    <input type="text" class="form-control" name="no_hp" id="no_hp" placeholder="Nomor HP" required>
+                                    <label for="exampleFormControlInput1" class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="email " required>
                                 </div>
                             </div>
                         </div>
@@ -32,14 +32,16 @@
                             </div>
                             <div class="col">
                                 <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Email</label>
-                                    <input type="text" class="form-control" name="email" id="email" placeholder="Email" required>
+                                    <label for="exampleFormControlInput1" class="form-label">Level</label>
+                                    <input type="text" class="form-control" name="level" id="level" placeholder="level" required>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Password</label>
-                                    <input type="text" class="form-control" name="password" id="password" placeholder="Password" required>
+                                    <input type="text" class="form-control" name="password" id="password" placeholder="Status" required>
                                 </div>
                             </div>
                         </div>

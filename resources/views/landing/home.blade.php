@@ -1,5 +1,8 @@
 @extends('landing.layouts.app')
 @section('content')
+@include('sweetalert::alert')
+
+@include('landing.layouts.includes.hero')
 <section id="about" class="about">
     <div class="container">
         <div class="section-title" data-aos="fade-up">
@@ -94,96 +97,28 @@
                 </div>
 
                 <div class="row mb-3">
-                    <form action="/search-data" method="GET" >
-                        <div class="mb-3">
-                          <label for="nik" class="form-label">NIK</label>
-                          <input type="text" id="inputField" class="form-control" name="nik" placeholder="Masukkan NIK">
-                            <button type="submit" class="btn btn-primary">Cek</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <div class="mb-3">
-                        <label for="namalengkap" class="form-label">Nama Lengkap</label>
-                        <input type="text" class="form-control" id="namalengkap"  value="{{ $user->nama_lengkap ?? '' }}" name="namalengkap"
-                            placeholder="Menunggu.." readonly>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="mb-3">
-                        <label for="tempatlahir" class="form-label">Tempat Lahir</label>
-                        <input type="text" class="form-control" id="tempatlahir" name="tempatlahir"
-                            placeholder="Menunggu.." readonly>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="mb-3">
-                        <label for="tanggallahir" class="form-label">Tanggal Lahir</label>
-                        <input type="text" class="form-control" id="tanggallahir" name="tanggallahir"
-                            placeholder="Menunggu.." readonly>
+                    <div class="col-5">
+                        <form action="/search-data" method="GET">
+                            <div class="mb-3">
+                                <label for="nik" class="form-label">NIK</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" maxlength="16" class="form-control" name="nik" id="nik"
+                                        onclick="validateNIK()" placeholder="Masukan NIK"
+                                        aria-label="Recipient's username" aria-describedby="button-addon2">
+                                    <button class="btn btn-outline-primary" type="submit" id="button-addon2">Cari
+                                        Data</button>
+                                </div>
+                                <span id="error-label" style="color: red;"></span>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3">
-                                <label for="jk" class="form-label">Jenis Kelamin</label>
-                                <input type="text" class="form-control" id="jk" name="jk" placeholder="Menunggu.."
-                                    readonly>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="mb-3">
-                                <label for="agama" class="form-label">Agama</label>
-                                <input type="text" class="form-control" id="agama" name="agama" placeholder="Menunggu.."
-                                    readonly>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="mb-3">
-                                <label for="statusperkawinan" class="form-label">Status Perkawinan</label>
-                                <input type="text" class="form-control" id="statusperkawinan" name="statusperkawinan"
-                                    placeholder="Menunggu.." readonly>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col d-flex flex-column justify-content-center" data-aos="fade-up"
-                            data-aos-delay="200">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="mb-3">
-                                        <label for="pekerjaan" class="form-label">Pekerjaan</label>
-                                        <input type="text" class="form-control" id="pekerjaan" name="pekerjaan"
-                                            placeholder="Menunggu.." readonly>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="mb-3">
-                                        <label for="kewarganegaraan" class="form-label">Kewarganegaraan</label>
-                                        <input type="text" class="form-control" id="kewarganegaraan"
-                                            name="kewarganegaraan" placeholder="Menunggu.." readonly>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="mb-3">
-                                        <label for="alamat" class="form-label">Alamat</label>
-                                        <input type="text" class="form-control" id="alamat" name="alamat"
-                                            placeholder="Menunggu.." readonly>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            @include('landing.formPengajuan')
 
-                    </div>
-                </div>
-                <button class="btn btn-primary">AJUKAN SURAT</button>
+        </div>
+    </div>
 </section>
 
 <!-- ======= Contact Section ======= -->
@@ -225,6 +160,20 @@
         </div>
     </div>
 </section>
+
+
+<script>
+    function validateNIK() {
+        var nikInput = document.getElementById("nik").value;
+        var errorLabel = document.getElementById("error-label");
+
+        if (nikInput.length !== 16) {
+            errorLabel.textContent = "NIK harus terdiri dari 16 karakter!";
+        } else {
+            errorLabel.textContent = "";
+        }
+    }
+</script>
 
 
 @endsection

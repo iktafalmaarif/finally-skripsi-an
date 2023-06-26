@@ -21,6 +21,16 @@
                                 </div>
                                 <div class="col">
                                     <div class="mb-3">
+                                        <label for="exampleFormControlInput1" class="form-label">Nomor Kartu Keluarga</label>
+                                        <input type="text" class="form-control"  maxlength="16"  oninput="validateKK()" name="no_kk" id="no_kk"
+                                            placeholder="No KK" required>
+                                        <span id="error-kk" style="color: red;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="mb-3">
                                         <label for="exampleFormControlInput1" class="form-label">Nama Lengkap</label>
                                         <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap"
                                             placeholder="Nama Lengkap" required>
@@ -37,14 +47,14 @@
                                             placeholder="Tempat Lahir" required>
                                     </div>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-4">
                                     <div class="mb-3">
                                         <label for="exampleFormControlInput1" class="form-label">Tanggal Lahir</label>
                                         <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir"
                                             placeholder="Nama Lengkap" required>
                                     </div>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-4">
                                     <div class="mb-3">
                                         <label for="exampleSelectGender">Janis Kelamin</label>
                                         <select class="form-control" name="jenis_kelamin" id="jenis_kelamin" required>
@@ -136,6 +146,19 @@
 
         if (nikInput.length !== 16) {
             errorLabel.textContent = "NIK harus terdiri dari 16 karakter!";
+        } else {
+            errorLabel.textContent = "";
+        }
+    }
+</script>
+
+<script>
+    function validateKK() {
+        var kkInput = document.getElementById("no_kk").value;
+        var errorLabel = document.getElementById("error-kk");
+
+        if (kkInput.length !== 16) {
+            errorLabel.textContent = "No KK harus terdiri dari 16 karakter!";
         } else {
             errorLabel.textContent = "";
         }

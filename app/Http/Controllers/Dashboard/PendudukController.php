@@ -20,6 +20,7 @@ class PendudukController extends Controller
     public function store(Request $request){
         $penduduk = new Penduduk;
         $penduduk->nik = $request->input('nik');
+        $penduduk->no_kk = $request->input('no_kk');
         $penduduk->nama_lengkap = $request->input('nama_lengkap');
         $penduduk->tempat_lahir = $request->input('tempat_lahir');
         $penduduk->tanggal_lahir = $request->input('tanggal_lahir');

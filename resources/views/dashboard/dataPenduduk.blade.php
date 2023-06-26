@@ -18,6 +18,7 @@
                                     <thead>
                                         <tr>
                                             <th>NIK</th>
+                                            <th>No. Kartu Keluarga</th>
                                             <th>Nama</th>
                                             <th>Jenis Kelamin</th>
                                             <th>Agama</th>
@@ -31,6 +32,7 @@
                                         @foreach($penduduk as $data)
                                         <tr>
                                             <td>{{$data->nik}}</td>
+                                            <td>{{$data->no_kk}}</td>
                                             <td>{{$data->nama_lengkap}}</td>
                                             <td>{{$data->jenis_kelamin}}</td>
                                             <td>{{$data->agama}}</td>

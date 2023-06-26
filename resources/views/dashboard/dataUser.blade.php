@@ -15,24 +15,22 @@
                       <thead>
                         <tr>
                           <th>ID</th>
-                          <th>Username</th>
+                          <th>Nama</th>
                           <th>Email</th>
-                          <th>No. Telepon</th>
                           <th>Status</th>
+                          <th>Level</th>
                         </tr>
                       </thead>
                       <tbody>
-                      <tr>
-                        <td>uiywsuiys</td>
-                        <td>uiywsuiys</td>
-                        <td>uiywsuiys</td>
-                        <td>uiywsuiys</td>
-                        <td>uiywsuiys</td>
-                        <td>uiywsuiys</td>
-                        <td>uiywsuiys</td>
-                        <td>uiywsuiys</td>
-                        <td>uiywsuiys</td>
-                      </tr>
+                      @foreach($User as $data)
+                        <tr>
+                          <td>{{$data->id}}</td>
+                          <td>{{$data->name}}</td>
+                          <td>{{$data->email}}</td>
+                          <td>{{$data->status}}</td>
+                          <td>{{$data->level}}</td>       
+                        </tr>
+                      @endforeach
                       </tbody>
                     </table>
                   </div>

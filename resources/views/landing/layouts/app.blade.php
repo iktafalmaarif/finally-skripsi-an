@@ -4,8 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="csrf-content" content="{{ csrf_token() }}">
 
-  <title>Scaffold Bootstrap Template - Index</title>
+  <title>Surpemas</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <link href="plugin/img/favicon.png" rel="icon">
@@ -23,13 +24,13 @@
 <body>
 
   @include('landing.layouts.includes.navbar')
-  @include('landing.layouts.includes.hero')
   <main id="main">
     @yield('content')
   </main>
   
   
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
   <script src="plugin/vendor/aos/aos.js"></script>
   <script src="plugin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="plugin/vendor/glightbox/js/glightbox.min.js"></script>
