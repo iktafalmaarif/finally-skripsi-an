@@ -37,6 +37,8 @@ Route::get('/convert/{id_pengajuan}', [PengajuanDashController::class, 'convert'
 Route::get('/data-penduduk', [PendudukController::class, 'index'])->name('Data Penduduk');
 Route::get('/form-penduduk', [PendudukController::class, 'formPenduduk']);
 Route::post('/insert-penduduk', [PendudukController::class, 'store']);
+Route::get('/edit-penduduk', [PendudukController::class, 'edit'])->name('penduduk.edit');
+
 
 // User
 Route::get('/data-user', [UsersController::class, 'index'])->name('Data User');

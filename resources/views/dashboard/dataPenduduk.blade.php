@@ -40,7 +40,7 @@
                                             <td>{{$data->status_perkawinan}}</td>
                                             <td>{{$data->alamat}}</td>
                                             <td>
-                                                <button class="btn btn-warning p-2" ><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <a href="{{ route('penduduk.edit', ['id_penduduk' => $data->id_penduduk])}}" class="btn btn-warning p-2" ><i class="fa-solid fa-pen-to-square"></i></a>
                                                 <button class="btn btn-danger p-2" ><i class="fa-solid fa-trash"></i></button>
                                             </td>
                                         </tr>

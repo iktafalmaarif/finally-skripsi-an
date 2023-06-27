@@ -34,4 +34,10 @@ class PendudukController extends Controller
         alert()->success('Berhasil','Data Penduduk Berhasil ditambahkan');
         return redirect()->route('Data Penduduk')->with('status','Data Telah Ditambahkan');
         }
+
+        public function edit(Request $request){
+            $idUser = $request->input('id_penduduk');
+            $penduduk = Penduduk::where('id_penduduk',$idUser)->get();
+            return view('dashboard.editPenduduk', ['penduduk' => $penduduk]);
+        }
 }

@@ -7,19 +7,26 @@
                 <div class="card">
                     <div class="card-body">
                     <h4 class="card-title">Data Penduduk</h4>
+                    @foreach($penduduk as $pd)
                     <form action="form-pengajuan-penduduk-add" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="row">
                             <div class="col">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">NIK</label>
-                                    <input type="text" class="form-control" name="nik" id="nik" placeholder="NIK" required>
+                                    <input value="{{$pd->nik}}" type="text" class="form-control" name="nik" id="nik" placeholder="NIK" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">No. KK</label>
+                                    <input value="{{$pd->no_kk}}" type="text" class="form-control" name="nik" id="nik" placeholder="NIK" required>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Nama Lengkap</label>
-                                    <input type="text" class="form-control" name="namalengkap" id="namalengkap" placeholder="Nama Lengkap" required>
+                                    <input value="{{$pd->nama_lengkap}}" type="text" class="form-control" name="namalengkap" id="namalengkap" placeholder="Nama Lengkap" required>
                                 </div>
                             </div>
                         </div>
@@ -27,22 +34,27 @@
                             <div class="col-4">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Tempat Lahir</label>
-                                    <input type="text" class="form-control" name="tempatlahir" id="tempatlahir" placeholder="Tempat Lahir" required>
+                                    <input value="{{$pd->tempat_lahir}}" type="text" class="form-control" name="tempatlahir" id="tempatlahir" placeholder="Tempat Lahir" required>
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Tanggal Lahir</label>
-                                    <input type="date" class="form-control" name="tanggallahir" id="tanggallahir" placeholder="Nama Lengkap" required>
+                                    <input value="{{$pd->tanggal_lahir}}" type="date" class="form-control" name="tanggallahir" id="tanggallahir" placeholder="Tanggal Lahir" required>
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="mb-3">
                                     <label for="exampleSelectGender">Janis Kelamin</label>
                                     <select class="form-control" name="jk" id="jk">
-                                        <option selected>Jenis Kelamin</option>
-                                        <option value="Laki-Laki">Laki-Laki</option>
+                                        @if($pd->jenis_kelamin === 'Laki-Laki')
+                                        <option selected value="Laki-Laki">Laki-Laki</option>
                                         <option value="Perempuan">Perempuan</option>
+                                        @else
+                                        <option selected value="Perempuan">Perempuan</option>
+                                        <option value="Laki-Laki">Laki-Laki</option>
+                                        @endif
+                                        
                                     </select>              
                                 </div>
                             </div>
@@ -52,11 +64,37 @@
                                 <div class="mb-3">
                                     <label for="exampleSelectGender">Agama</label>
                                     <select class="form-control" name="agama" id="agama">
-                                        <option selected>Agama</option>
+                                        @if($pd->agama === 'Islam')
+                                        <option selected value="Islam">Islam</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Budha">Budha</option>
+                                        <option value="Katholik">Katholik</option>
+                                        @elseif($pd->agama === 'Kristen')
+                                        <option value="Islam">Islam</option>
+                                        <option selected value="Kristen">Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Budha">Budha</option>
+                                        <option value="Katholik">Katholik</option>
+                                        @elseif($pd->agama === 'Budha')
+                                        <option value="Islam">Islam</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option selected value="Budha">Budha</option>
+                                        <option value="Katholik">Katholik</option>
+                                        @elseif($pd->agama === 'Hindu')
+                                        <option value="Islam">Islam</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option selected value="Hindu">Hindu</option>
+                                        <option value="Budha">Budha</option>
+                                        <option value="Katholik">Katholik</option>
+                                        @else
                                         <option value="Islam">Islam</option>
                                         <option value="Kristen">Kristen</option>
                                         <option value="Hindu">Hindu</option>
                                         <option value="Budha">Budha</option>
+                                        <option selected value="Katholik">Katholik</option>
+                                        @endif  
                                     </select>              
                                 </div>
                             </div>
@@ -64,11 +102,26 @@
                                 <div class="mb-3">
                                     <label for="exampleSelectGender">Status Perkawinan</label>
                                     <select class="form-control" name="statusperkawinan" id="statusperkawinan">
-                                        <option selected>Status Perkawiwnan</option>
+                                    @if($pd->status === 'Kawin')
+                                        <option value="Wirausaha">Wirausaha</option>
+                                        <option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
+                                        <option value="Belum Bekerja">Belum Bekerja</option>
+                                        @elseif($pd->status === 'Belum Kawin')
+                                        <option value="Kawin">Kawin</option>
+                                        <option selected value="Belum Kawin">Belum Kawin</option>
+                                        <option value="Cerai Hidup">Cerai Hidup</option>
+                                        <option value="Cerai Mati">Cerai Mati</option>
+                                        @elseif($pd->status === 'Cerai Hidup')
+                                        <option value="Kawin">Kawin</option>
+                                        <option value="Belum Kawin">Belum Kawin</option>
+                                        <option selected value="Cerai Hidup">Cerai Hidup</option>
+                                        <option value="Cerai Mati">Cerai Mati</option>
+                                        @else
                                         <option value="Kawin">Kawin</option>
                                         <option value="Belum Kawin">Belum Kawin</option>
                                         <option value="Cerai Hidup">Cerai Hidup</option>
-                                        <option value="Cerai Mati">Cerai Mati</option>                           
+                                        <option selected value="Cerai Mati">Cerai Mati</option>
+                                        @endif                      
                                     </select>              
                                 </div>
                             </div>
@@ -78,10 +131,19 @@
                                 <div class="mb-3">
                                     <label for="exampleSelectGender">Pekerjaan</label>
                                     <select class="form-control" name="pekerjaan" id="pekerjaan">
-                                        <option selected>Jenis Pekerjaan</option>
-                                        <option value="Wirausaha">Wirausaha</option>
+                                        @if($pd->status === 'Wirausaha')
+                                        <option selected value="Wirausaha">Wirausaha</option>
                                         <option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
                                         <option value="Belum Bekerja">Belum Bekerja</option>
+                                        @elseif($pd->status === 'Pelajar/Mahasiswa')
+                                        <option value="Wirausaha">Wirausaha</option>
+                                        <option selected value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
+                                        <option value="Belum Bekerja">Belum Bekerja</option>
+                                        @else
+                                        <option value="Wirausaha">Wirausaha</option>
+                                        <option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
+                                        <option selected value="Belum Bekerja">Belum Bekerja</option>
+                                        @endif
                                     </select>              
                                 </div>
                             </div>
@@ -89,19 +151,29 @@
                                 <div class="mb-3">
                                     <label for="exampleSelectGender">Kewarganegaraan</label>
                                     <select class="form-control" name="kewarganegaraan" id="kewarganegaraan">
-                                        <option selected>Kewarganegaraan</option>
-                                        <option value="WNI">WNI</option>
+                                        @if($pd->kewarganegaraan === 'WNI')
+                                        <option selected value="WNI">WNI</option>
                                         <option value="WNA">WNA</option>
+                                        @else
+                                        <option value="WNI">WNI</option>
+                                        <option selected value="WNA">WNA</option>
+                                        @endif
+
+                                    <option value="WNI">WNI</option>
+                                    <option value="WNA">WNA</option>
                                     </select>              
                                 </div>
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Alamat</label>
-                            <textarea class="form-control" name="alamat" id="alamat" rows="3"></textarea>
+                            <textarea class="form-control" name="alamat" id="alamat">
+                                {{$pd->alamat}}
+                            </textarea>
                           </div>
                     <button class="btn btn-primary"><i class="fa-solid fa-floppy-disk mr-2"></i>SIMPAN</button>
                     </form>
+                    @endforeach
                     </div>
                 </div>
             </div>
