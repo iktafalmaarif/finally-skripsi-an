@@ -23,7 +23,7 @@
                     <span id="error-label" style="color: red;"></span>
                 </div>
             <!-- </form> -->
-            <div id="listPengajuan">
+            <div id="listTracking">
 
             </div>
         </div>
@@ -31,33 +31,63 @@
     </div>
 </section>
 
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script>
-    jQuery.ajaxSetup({
-        header: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    })
+    $(document).ready(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        })
+        $("#tracking").click(function(){
+            var nik = $('#nik').val();
+            var data = {
+                nik: nik
+            };
 
-    $("#tracking").click(function(){
-        html += '<table>';
-        html += '<tr>';
-        html += '<th>Nama<th>';
-        html += '<th>Nama<th>';
-        html += '<th>Nama<th>';
-        html += '<tr>';
-        $('#listPengajuan').html(html);
-    })
+            route = "{{route('tracking')}}";
 
+            $.ajax({
+                url: route,
+                type: "POST",
+                data: { datanya: JSON.stringify(data) },
+                dataType: "json",
+                beforeSend: function () {
+                    
+                },
+                success: function(data) {
+                    response = JSON.parse(JSON.stringify(data));
+                    console.log(response);
+
+                    var html = "";
+                    if (data.length) {
+                        $.each(data, function(key, value){
+                            html += '<tr>';
+                            html += '<td>value<td>';
+                            html += '<td>Nama<td>';
+                            html += '<td>Nama<td>';
+                            html += '<td>Nama<td>';
+                            html += '<tr>';
+                            $('#listTracking').html(html);
+                        })
+                    }
+                    
+                        
+                    
+                }
+            })
+        })
+    });
     function validateNIK() {
-        var nikInput = document.getElementById("nik").value;
-        var errorLabel = document.getElementById("error-label");
+            var nikInput = document.getElementById("nik").value;
+            var errorLabel = document.getElementById("error-label");
 
-        if (nikInput.length !== 16) {
-            errorLabel.textContent = "NIK harus terdiri dari 16 karakter!";
-        } else {
-            errorLabel.textContent = "";
+            if (nikInput.length !== 16) {
+                errorLabel.textContent = "NIK harus terdiri dari 16 karakter!";
+            } else {
+                errorLabel.textContent = "";
+            }
         }
-    }
 </script>
 
 

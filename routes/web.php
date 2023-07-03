@@ -23,7 +23,8 @@ Route::get('/search-data', [LandingController::class, 'search']);
 Route::post('/pengajuan', [PengajuanController::class, 'insertPengajuan']);
 
 // Tracking
-Route::get('/tracking', [TrackingController::class, 'trackingSurat']);
+Route::post('/tracking', [TrackingController::class, 'trackingSurat'])->name('tracking');
+Route::get('/tracking-surat', [TrackingController::class, 'tracking']);
 
 // Dashboard
 Route::get('/dashboard', [HomeController::class, 'home']);
