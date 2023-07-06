@@ -49,8 +49,8 @@ class PengajuanDashController extends Controller
         ->where('pengajuans.id_pengajuan', $id)
         ->first();
 
-    $pdf = PDF::loadView('dashboard.surat', ['data' => $data]);
-    $pdf->setPaper('f4');
+    $pdf = PDF::loadView('letter.SKTM', ['data' => $data]);
+    $pdf->setPaper('F4');
     return $pdf->stream('Surat Pengajuan.pdf');
 }
 }

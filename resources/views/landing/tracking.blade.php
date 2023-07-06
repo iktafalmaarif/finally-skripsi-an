@@ -33,51 +33,51 @@
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        })
-        $("#tracking").click(function(){
-            var nik = $('#nik').val();
-            var data = {
-                nik: nik
-            };
+    // $(document).ready(function() {
+    //     $.ajaxSetup({
+    //         headers: {
+    //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //         }
+    //     })
+    //     $("#tracking").click(function(){
+    //         var nik = $('#nik').val();
+    //         var data = {
+    //             nik: nik
+    //         };
 
-            route = "{{route('tracking')}}";
+    //         route = "{{route('tracking')}}";
 
-            $.ajax({
-                url: route,
-                type: "POST",
-                data: { datanya: JSON.stringify(data) },
-                dataType: "json",
-                beforeSend: function () {
+    //         $.ajax({
+    //             url: route,
+    //             type: "POST",
+    //             data: { datanya: JSON.stringify(data) },
+    //             dataType: "json",
+    //             beforeSend: function () {
                     
-                },
-                success: function(data) {
-                    response = JSON.parse(JSON.stringify(data));
-                    console.log(response);
+    //             },
+    //             success: function(data) {
+    //                 response = JSON.parse(JSON.stringify(data));
+    //                 console.log(response);
 
-                    var html = "";
-                    if (data.length) {
-                        $.each(data, function(key, value){
-                            html += '<tr>';
-                            html += '<td>value<td>';
-                            html += '<td>Nama<td>';
-                            html += '<td>Nama<td>';
-                            html += '<td>Nama<td>';
-                            html += '<tr>';
-                            $('#listTracking').html(html);
-                        })
-                    }
+    //                 var html = "";
+    //                 if (data.length) {
+    //                     $.each(data, function(key, value){
+    //                         html += '<tr>';
+    //                         html += '<td>value<td>';
+    //                         html += '<td>Nama<td>';
+    //                         html += '<td>Nama<td>';
+    //                         html += '<td>Nama<td>';
+    //                         html += '<tr>';
+    //                         $('#listTracking').html(html);
+    //                     })
+    //                 }
                     
                         
                     
-                }
-            })
-        })
-    });
+    //             }
+    //         })
+    //     })
+    // });
     function validateNIK() {
             var nikInput = document.getElementById("nik").value;
             var errorLabel = document.getElementById("error-label");

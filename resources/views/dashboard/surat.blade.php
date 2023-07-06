@@ -1,49 +1,16 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-	<title>Kop Surat</title>
+	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+	<meta name=Generator content="Microsoft Word 15 (filtered)">
 	<style>
-		
-		.header {
-			display: flex;
-			align-items: center;
-			margin-bottom: 40px;
-		}
-
-		.logo {
-			width: 13%;
-			height: auto;
-		}
-
-		.title {
-			font-size: 24px;
-			font-weight: bold;
-			text-align: center;
-			flex-grow: 1;
-			margin: 0;
-			padding: 0;
-		}
-
-		.subtitle {
-			font-size: 20px;
-			font-weight: bold;
-			text-align: center;
-			margin: 0;
-			padding: 0;
-		}
-
-		.title p {
-			font-size: 12px;
-			font-weight: normal;
-			padding-top: 1%;
-		}
-
+		<!--
 		.line-one {
 			border: none;
 			border-bottom: 2px solid black;
 			margin: 0;
 			padding: 0;
+			padding-top: 2%;
 		}
 
 		.line-two {
@@ -53,122 +20,167 @@
 			padding-top: 1px;
 		}
 
-		.perihal-lampiran {
-			padding-top: 2%;
-			float: left;
-			font-size: 14px;
+		/* Font Definitions */
+		@font-face {
+			font-family: "Cambria Math";
+			panose-1: 2 4 5 3 5 4 6 3 2 4;
 		}
 
-		.tanggal-lampiran {
-			float: right;
-			padding-top: 2%;
-			font-size: 14px;
+		@font-face {
+			font-family: Calibri;
+			panose-1: 2 15 5 2 2 2 4 3 2 4;
 		}
+
+		@font-face {
+			font-family: Tahoma;
+			panose-1: 2 11 6 4 3 5 4 4 2 4;
+		}
+
+		/* Style Definitions */
+		p.MsoNormal,
+		li.MsoNormal,
+		div.MsoNormal {
+			margin: 0in;
+			font-size: 12.0pt;
+			font-family: "Times New Roman", serif;
+		}
+
+		p.MsoHeader,
+		li.MsoHeader,
+		div.MsoHeader {
+			mso-style-link: "Header Char";
+			margin: 0in;
+			font-size: 10.0pt;
+			font-family: "Calibri", sans-serif;
+		}
+
+		span.HeaderChar {
+			mso-style-name: "Header Char";
+			mso-style-link: Header;
+			font-family: "Arial", sans-serif;
+		}
+
+		.MsoChpDefault {
+			font-family: "Calibri", sans-serif;
+		}
+
+		/* Page Definitions */
+		@page WordSection1 {
+			size: 612.1pt 935.55pt;
+			margin: 1.0in 1.0in 1.0in 1.0in;
+		}
+
+		div.WordSection1 {
+			page: WordSection1;
+		}
+		-->
 	</style>
+
 </head>
 
-<body>
+<body lang=EN-US style='word-wrap:break-word'>
+
+	<div class=WordSection1>
+
+		<p class=MsoHeader align=center style='margin-left:pt;text-align:center'><img width=83 height=100
+				src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Shield_of_Tegal_Regency.svg/242px-Shield_of_Tegal_Regency.svg.png"
+				align=left hspace=12><span style='font-size:20.0pt;font-family:"Times New Roman",serif'>PEMERINTAH
+				KABUPATEN TEGAL</span></p>
+
+		<p class=MsoHeader align=center style='margin-left:85.05pt;text-align:center'><span
+				style='font-size:20.0pt;font-family:"Times New Roman",serif'>KECAMATAN ADIWERNA</span></p>
+
+		<p class=MsoHeader align=center style='margin-left:85.05pt;text-align:center'><b><span
+					style='font-size:20.0pt;font-family:"Times New Roman",serif'>KANTOR KEPALA DESA
+					PAGIYANTEN</span></b></p>
 
 
-	<div class="container">
-		<div class="header">
-			<!-- <img src="https://1.bp.blogspot.com/-LVf1Oi6JikY/WIFap3DB89I/AAAAAAAACAk/5p3M8azJkdMsBuq7JM852u_EpOLs564MACLcB/s1600/LOGO%2BKAB%2BTEGAL1.png"
-				alt="Logo" class="logo"> -->
-			<div class="title">
-				PEMERINTAH KABUPATEN TEGAL
-				<div class="subtitle">KECAMATAN ADIWERNA</div>
-				<div class="subtitle">DESA PAGIANTEN</div>
-				<p class="subtitle">Email: info@contohperusahaan.com - Website: www.contohperusahaan.com</p>
-			</div>
-			<!-- <img src="https://1.bp.blogspot.com/-LVf1Oi6JikY/WIFap3DB89I/AAAAAAAACAk/5p3M8azJkdMsBuq7JM852u_EpOLs564MACLcB/s1600/LOGO%2BKAB%2BTEGAL1.png"
-				alt="Logo" class="logo"> -->
-		</div>
 
+		<p class=MsoHeader align=center style='margin-left:85.05pt;text-align:center'><i><span lang=IN
+					style='font-size:11.0pt;font-family:"Times New Roman",serif'>Alamat</span></i><i><span
+					style='font-size:11.0pt;font-family:"Times New Roman",serif'> : Jl. Makam Suro
+					No 02, Pagiyanten</span></i><i><span style='font-size:11.0pt;font-family:"Times New Roman",serif'>
+				</span></i><i><span style='font-size:11.0pt;font-family:"Times New Roman",serif'>–</span></i><i><span
+					style='font-size:11.0pt;font-family:"Times New Roman",serif'> </span></i><i><span
+					style='font-size:11.0pt;font-family:"Times New Roman",serif'>Adiwerna</span></i><i><span
+					style='font-size:11.0pt;font-family:"Times New Roman",serif'> </span></i><i><span
+					style='font-size:11.0pt;font-family:"Times New Roman",serif'>-</span></i><i><span
+					style='font-size:11.0pt;font-family:"Times New Roman",serif'> </span></i><i><span
+					style='font-size:11.0pt;font-family:"Times New Roman",serif'>Tegal Kode Pos :
+					52194</span></i></p>
 		<hr class="line-one">
 		<hr class="line-two">
 
-		
-		<div class="title" style="text-align: center; font-family: 'Times New Roman'; padding-bottom: 1%;">
-			<h1 style="font-size: 20px;text-decoration: underline;">SURAT KETERANGAN TIDAK MAMPU</h1>
-			<p style="font-size: 18px;">Nomor : 471 / 04 / SKTM / 069 / VI / 2023</p>
-		</div>
+		<div style='border:none;border-bottom:double windowtext 4.5pt;padding:0in 0in 1.0pt 0in'>
 
-		<div class="isi" style="font-size: 15px; font-family: 'Times New Roman'; padding-left: 3%; padding-right: 3%;">
-			<p style="text-indent: 80px">
-				Yang bertanda tangan di bawah ini, Kepala Desa Pagiyanten Kecamatan Adiwerna Kabupaten Tegal, dengan ini menerangkan bahwa : 
-			</p>
-
-			<table style="padding-left: 8%;">
-				<tr>
-					<td>Nama</td>
-					<td style="padding-left: 100px;">:</td>
-					<td>{{$data->nama_lengkap}}</td>
-				</tr>
-				<tr>
-					<td>Tempat, Tanggal Lahir</td>
-					<td style="padding-left: 100px;">:</td>
-					<td>{{$data->tempat_lahir}}, {{$data->tanggal_lahir}}</td>
-				</tr>
-				<tr>
-					<td>Jenis Kelamin</td>
-					<td style="padding-left: 100px;">:</td>
-					<td>{{$data->jenis_kelamin}}</td>
-				</tr>
-				<tr>
-					<td>Alamat</td>
-					<td style="padding-left: 100px;">:</td>
-					<td>{{$data->alamat}}</td>
-				</tr>
-				<tr>
-					<td>Agama</td>
-					<td style="padding-left: 100px;">:</td>
-					<td>{{$data->agama}}</td>
-				</tr>
-				<tr>
-					<td>Pekerjaan</td>
-					<td style="padding-left: 100px;">:</td>
-					<td>{{$data->pekerjaan}}</td>
-				</tr>
-				<tr>
-					<td>Kewarganegaraan</td>
-					<td style="padding-left: 100px;">:</td>
-					<td>{{$data->kewarganegaraan}}</td>
-				</tr>
-			</table>
-			<p style="padding-left: 8%;">Adalah benar-benar <strong>Keluarga Tidak Mampu/ Miskin</strong> dan akan digunakan untuk :</p>
-
-			<table style="padding-left: 8%;">
-				<tr>
-					<td>Keperluan</td>
-					<td style="padding-left: 150px;">:</td>
-					<td style="text-align: justify;">SALSYARAT KERINGANAN BIAYA UNTUK PENDAFTARAN SMP DI SLB MANUNGGAL SLAWI</td>
-				</tr>
-				<tr>
-					<td>Keterangan Lain-lain</td>
-					<td style="padding-left: 150px;">:</td>
-					<td style="text-align: justify;">Bahwa anak tersebut diatas benar-benar dari
-					Keluarga Tidak Mampu dan Orang Tuanya Termasuk Penerima
-					Bantuan PKH & BPNT.
-				  </td>
-				</tr>				
-			</table>
-			<p style="text-indent: 80px">Demikian Surat Keterangan ini Kami buat dengan sebenarnya dan untuk dapat dipergunakan sebagamana mestinya.</p>
-
-
-			<div class="sign" style="font-size: 15px; font-family: 'Times New Roman'; padding-top: 2%; padding-left: 75%;">
-				<p>Hormat kami,</p>
-				<br>
-				<br>
-				<p><strong>SEGER</strong></p>
-			</div>
-
+			<p class=MsoHeader align=center style='text-align:center;border:none;
+padding:0in'><b><span lang=IN>&nbsp;</span></b></p>
 
 		</div>
-	
-</div>
 
+		<p class=MsoNormal align=center style='text-align:center;line-height:150%'><b><u><span lang=IN
+						style='font-size:5.0pt;line-height:150%'><span style='text-decoration:
+ none'>&nbsp;</span></span></u></b></p>
 
+		<p class=MsoNormal align=center style='text-align:center;line-height:150%'><b><u><span lang=IN><span
+							style='text-decoration:none'>&nbsp;</span></span></u></b></p>
 
+		<p class=MsoNormal align=center style='text-align:center;line-height:150%'><b><u><span lang=IN
+						style='font-size:16.0pt;line-height:150%'>SURAT KETERANGAN</span></u></b></p>
+
+		<p class=MsoNormal align=center style='text-align:center;line-height:150%'><span lang=IN>Nomor : 480 / 04 / 037
+				/ II / 2023</span></p>
+
+		<p class=MsoNormal align=center style='text-align:center;line-height:150%'><span lang=IN>&nbsp;</span></p>
+
+		<p class=MsoNormal style='text-align:justify;line-height:150%'><span lang=IN>Yang
+				bertanda tangan di bawah ini :</span></p>
+
+		<p class=MsoNormal style='text-align:justify;line-height:150%'><span lang=IN>&nbsp;</span></p>
+
+		<p class=MsoNormal style='text-align:justify;line-height:150%'><span lang=IN>Nama &nbsp;&nbsp; :
+				S E G E R</span></p>
+
+		<p class=MsoNormal style='text-align:justify;line-height:150%'><span lang=IN>Jabatan &nbsp; :
+				Kepala Desa Pagiyanten</span></p>
+
+		<p class=MsoNormal style='text-align:justify;line-height:150%'><span lang=IN>&nbsp;</span></p>
+
+		<p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:150%'><span lang=IN>Dengan ini
+				menerangkan bahwa sebidang tanah No. C 2328 Persil 14  
+				Klas D.III yang terletak di Desa Pagiyanten RT 023 RW 006 Kecamatan Adiwerna
+				Kabupaten Tegal memiliki SPPT :</span></p>
+
+		<p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:150%'><span lang=IN>NOP :
+				33.28.120.004.004-0421.0</span></p>
+
+		<p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:150%'><span lang=IN>Nama Wajib Pajak :
+				SUMANTORO H</span></p>
+
+		<p class=MsoNormal style='text-align:justify;line-height:150%'><span lang=IN>&nbsp;</span></p>
+
+		<p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:150%'><span lang=IN>Demikian surat
+				keterangan ini kami buat dengan sebenar-benarnya dan
+				agar dapat dipergunakan sebagaimana mestinya.</span></p>
+
+		<p class=MsoNormal style='text-align:justify;line-height:150%'><span lang=IN>&nbsp;</span></p>
+
+		<p class=MsoNormal style='margin-left:318.95pt;text-align:justify;line-height:
+150%'><span lang=IN>Pagiyanten, 27 Februari 2023</span></p>
+
+		<p class=MsoNormal style='margin-left:318.95pt;text-align:justify;line-height:
+150%'><span lang=IN>Kepala Desa Pagiyanten</span></p>
+
+		<p class=MsoNormal style='margin-left:318.95pt;text-align:justify;line-height:
+150%'><span lang=IN>&nbsp;</span></p>
+
+		<p class=MsoNormal style='margin-left:318.95pt;text-align:justify;line-height:
+150%'><span lang=IN>&nbsp;</span></p>
+
+		<p class=MsoNormal style='margin-left:340.2pt;text-align:justify;line-height:
+150%'><b><span lang=IN>S E G E R</span></b></p>
+
+	</div>
 
 </body>
 

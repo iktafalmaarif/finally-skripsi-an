@@ -76,10 +76,36 @@
         <div class="section-title" data-aos="fade-up">
             <br>
             <h2>Tracking Surat Anda Disini</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt magnam nostrum reiciendis
-                distinctio ad illo assumenda maxime, quam minima placeat accusamus voluptatum, dolorem vero voluptate
-                asperiores cumque. Doloremque, nam!</p>
-            <br>
+                <div class="row">
+                    <div class="col-6">
+                        <form action="/penyo" method="post">
+                            @csrf
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Masukan NIK" name="nik" aria-label="Recipient's username" aria-describedby="button-addon2" required>
+                                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Tracking</button>
+                              </div>
+                        </form>
+                    </div>
+
+                    @if(isset($penduduk))
+    <h2>Hasil Pencarian</h2>
+    <p>NIK: {{ $penduduk[0]->nik }}</p>
+    <p>Nama: {{ $penduduk[0]->nama_lengkap }}</p>
+
+    <h3>Data Pengajuan</h3>
+    @foreach($penduduk as $data)
+        <p>Jenis Surat: {{ $data->jenis_surat }}</p>
+        <p>Nomor Surat: {{ $data->nomor_surat }}</p>
+        <p>Status: {{ $data->status }}</p>
+    @endforeach
+@elseif(isset($error))
+    <h2>Hasil Pencarian</h2>
+    <p>{{ $error }}</p>
+@endif
+
+                   
+
+                </div>
         </div>
     </div>
 </section>

@@ -18,6 +18,7 @@ use App\Http\Controllers\Landing\TrackingController;
 // Home
 Route::get('/', [LandingController::class, 'index'])->name('Home');
 Route::get('/search-data', [LandingController::class, 'search']);
+Route::post('/penyo', [LandingController::class, 'cariDataByNIK']);
 
 // Pengajuan
 Route::post('/pengajuan', [PengajuanController::class, 'insertPengajuan']);
