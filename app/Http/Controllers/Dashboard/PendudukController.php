@@ -1,23 +1,27 @@
 <?php
 
 namespace App\Http\Controllers\Dashboard;
+
 use App\Http\Controllers\Controller;
 use App\Models\Penduduk;
-
 use Illuminate\Http\Request;
 
 class PendudukController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $penduduk = Penduduk::all();
-        return view('dashboard.dataPenduduk',compact('penduduk'));
+
+        return view('dashboard.dataPenduduk', compact('penduduk'));
     }
 
-    public function formPenduduk(){
+    public function formPenduduk()
+    {
         return view('dashboard.formPenduduk');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $penduduk = new Penduduk;
         $penduduk->nik = $request->input('nik');
         $penduduk->no_kk = $request->input('no_kk');
@@ -29,15 +33,18 @@ class PendudukController extends Controller
         $penduduk->status_perkawinan = $request->input('status_perkawinan');
         $penduduk->pekerjaan = $request->input('pekerjaan');
         $penduduk->kewarganegaraan = $request->input('kewarganegaraan');
-        $penduduk->alamat = $request->input('alamat');   
+        $penduduk->alamat = $request->input('alamat');
         $penduduk->save();
-        alert()->success('Berhasil','Data Penduduk Berhasil ditambahkan');
-        return redirect()->route('Data Penduduk')->with('status','Data Telah Ditambahkan');
-        }
+        alert()->success('Berhasil', 'Data Penduduk Berhasil ditambahkan');
 
-        public function edit(Request $request){
-            $idUser = $request->input('id_penduduk');
-            $penduduk = Penduduk::where('id_penduduk',$idUser)->get();
-            return view('dashboard.editPenduduk', ['penduduk' => $penduduk]);
-        }
+        return redirect()->route('Data Penduduk')->with('status', 'Data Telah Ditambahkan');
+    }
+
+    public function edit(Request $request)
+    {
+        $idUser = $request->input('id_penduduk');
+        $penduduk = Penduduk::where('id_penduduk', $idUser)->get();
+
+        return view('dashboard.editPenduduk', ['penduduk' => $penduduk]);
+    }
 }

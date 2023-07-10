@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\Penduduk;
-use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use PDF;
 
 class PengajuanDashController extends Controller
@@ -15,6 +15,7 @@ class PengajuanDashController extends Controller
         $data = DB::table('pengajuans')
             ->join('penduduks', 'pengajuans.id_penduduk', '=', 'penduduks.id_penduduk')
             ->get();
+
         return view('dashboard.daftarPengajuan', compact('data'));
     }
 
@@ -40,8 +41,10 @@ class PengajuanDashController extends Controller
             ]);
 
         alert()->success('Berhasil', 'Data Berhasil diuprove');
+
         return redirect()->route('Daftar Pengajuan')->with('success', 'Data Berhasil Diuprove');
     }
+
     public function reject(Request $request, $id)
     {
         $approve = DB::table('pengajuans')
@@ -51,6 +54,7 @@ class PengajuanDashController extends Controller
             ]);
 
         alert()->warning('Berhasil', 'Data Ditolak');
+
         return redirect()->route('Daftar Pengajuan')->with('warning', 'Data Ditolak');
     }
 
@@ -60,24 +64,25 @@ class PengajuanDashController extends Controller
             ->join('penduduks', 'pengajuans.id_penduduk', '=', 'penduduks.id_penduduk')
             ->where('pengajuans.id_pengajuan', $id)
             ->first();
-        
+
         $jenis = $data->jenis_surat;
         $namaPengaju = $data->nama_lengkap;
 
         if ($jenis == 'Surat Keterangan Tidak Mampu') {
             $pdf = PDF::loadView('letter.SKTM', ['data' => $data]);
-        }elseif ($jenis == 'Surat Bidikmisi Universitas') {
+        } elseif ($jenis == 'Surat Bidikmisi Universitas') {
             $pdf = PDF::loadView('letter.SKTMBIDIKMISIUNIVERSITAS', ['data' => $data]);
-        }elseif ($jenis == "Surat Kepemilikan Tanah") {
+        } elseif ($jenis == 'Surat Kepemilikan Tanah') {
             $pdf = PDF::loadView('letter.SURATKEPEMILIKANTANAH', ['data' => $data]);
-        }elseif ($jenis == "Surat Keterangan Belum Menikah") {
+        } elseif ($jenis == 'Surat Keterangan Belum Menikah') {
             $pdf = PDF::loadView('letter.SURATKETERANGANDOMISILI', ['data' => $data]);
-        }elseif ($jenis == "Surat Keterangan Domisili") {
+        } elseif ($jenis == 'Surat Keterangan Domisili') {
             $pdf = PDF::loadView('letter.SURATKETERANGANBELUMMENIKAH', ['data' => $data]);
         }
-        
+
         $namaFile = $jenis.'-'.$namaPengaju;
         $pdf->setPaper('F4');
+
         return $pdf->stream($namaFile.'.pdf');
     }
 }

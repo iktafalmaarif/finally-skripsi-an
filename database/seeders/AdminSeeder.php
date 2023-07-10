@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -16,9 +15,9 @@ class AdminSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'kandar',
             'email' => 'kandar@gmail.com',
-            'password' => 'kandar123',
+            'password' => bcrypt('kandar@gmail.com'),
             'status' => '1',
-            'level' => '1',
+            'role' => 'admin',
         ]);
     }
 }
