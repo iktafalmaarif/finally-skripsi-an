@@ -54,6 +54,5 @@
   <script src="assets/js/dashboard.js"></script>
   <script src="assets/js/Chart.roundedBarCharts.js"></script>
 </body>
-
 </html>
 

@@ -132,7 +132,7 @@
                                                 <option selected disabled value="">-- Pilih Jenis Surat --</option>
                                                 <option value="Surat Keterangan Tidak Mampu">Surat Keterangan Tidak
                                                     Mampu</option>
-                                                <option value="Surat Izin Bangunan">Surat Izin Bangunan</option>
+                                                <option value="Surat Bidikmisi Universitas">Surat Bidikmisi Universitas</option>
                                                 <option value="Surat Keterangan Domisili">Surat Keterangan Domisili
                                                 </option>
                                                 <option value="Surat Kelahiran Baru">Surat Kelahiran Baru</option>
@@ -173,12 +173,7 @@
                                 </div>
                             </div>
 
-                            <button class="btn btn-primary">AJUKAN SURAT</button>
 
-                        </form>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -199,6 +194,7 @@ function showFormSection() {
     var jenisSurat = document.getElementById("jenis_surat").value;
     var formSection = document.getElementById("form_section");
     var domisiliSection = document.getElementById("domisili_section");
+    var bidikmisiSection = document.getElementById("bidikmisi_section");
 
     if (jenisSurat === "Surat Keterangan Tidak Mampu") {
         domisiliSection.style.display = "block";

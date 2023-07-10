@@ -16,7 +16,7 @@
         </div>
     </div>
 </section>
-
+<hr>
 <section id="services" class="services">
     <div class="container">
 
@@ -26,7 +26,7 @@
                 bisa membuat surat melalui website. jika belum silahkan <a href="#contact">Hubungi Admin.</a></p>
         </div>
 
-        <div class="row">
+        <div class="row" >
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
                 <div class="icon-box icon-box-pink">
                     <div class="icon"><i class="bx bx-file"></i></div>
@@ -70,46 +70,69 @@
 
     </div>
 </section>
-
-<section id="tracking" class="tracking">
+<hr>
+<section id="checking" class="tracking">
     <div class="container">
         <div class="section-title" data-aos="fade-up">
             <br>
-            <h2>Tracking Surat Anda Disini</h2>
+            <h2>Tracking Surat Anda Disini</h2></br>
                 <div class="row">
                     <div class="col-6">
                         <form action="/penyo" method="post">
                             @csrf
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" placeholder="Masukan NIK" name="nik" aria-label="Recipient's username" aria-describedby="button-addon2" required>
-                                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Tracking</button>
+                                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Checking</button>
                               </div>
                         </form>
                     </div>
 
                     @if(isset($penduduk))
-    <h2>Hasil Pencarian</h2>
-    <p>NIK: {{ $penduduk[0]->nik }}</p>
-    <p>Nama: {{ $penduduk[0]->nama_lengkap }}</p>
+                <div style="margin-top: 50px;">
+                    <h2>Hasil Pencarian</h2>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>NIK</th>
+                            <th>Nama</th>
+                            <th>Jenis Surat</th>
+                            <th>Nomor Surat</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ $penduduk[0]->nik }}</td>
+                            <td>{{ $penduduk[0]->nama_lengkap }}</td>
+                            <td>{{ $penduduk[0]->jenis_surat }}</td>
+                            <td>{{ $penduduk[0]->nomor_surat }}</td>
+                            <td>{{ $penduduk[0]->status }}</td>
+                        </tr>
+                        @foreach($penduduk as $data)
+                        <tr>
+                            <td>{{ $data->nik }}</td>
+                            <td>{{ $data->nama_lengkap }}</td>
+                            <td>{{ $data->jenis_surat }}</td>
+                            <td>{{ $data->nomor_surat }}</td>
+                            <td>{{ $data->status }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                @elseif(isset($error))
+                <h2>Hasil Pencarian</h2>
+                <p>{{ $error }}</p>
+                @endif
 
-    <h3>Data Pengajuan</h3>
-    @foreach($penduduk as $data)
-        <p>Jenis Surat: {{ $data->jenis_surat }}</p>
-        <p>Nomor Surat: {{ $data->nomor_surat }}</p>
-        <p>Status: {{ $data->status }}</p>
-    @endforeach
-@elseif(isset($error))
-    <h2>Hasil Pencarian</h2>
-    <p>{{ $error }}</p>
-@endif
 
-                   
 
                 </div>
         </div>
     </div>
 </section>
-
+<hr>
 <section id="ajukan" class="ajukan">
     <div class="container" data-aos="fade-up">
         <div class="row">
@@ -146,7 +169,7 @@
         </div>
     </div>
 </section>
-
+<hr>
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact section-bg">
     <div class="container">

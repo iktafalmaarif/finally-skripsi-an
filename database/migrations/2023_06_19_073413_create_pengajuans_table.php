@@ -19,8 +19,13 @@ return new class extends Migration
             $table->string('jenis_surat');
             $table->string('nomor_surat')->nullable();
             $table->integer('status')->nullable();;
-            $table->string('ktp');
-            $table->string('kk');
+            $table->string('ktp')->nullable();
+            $table->string('kk')->nullable();
+            $table->string('keperluan')->nullable();
+            $table->string('nama_kampus')->nullable();
+            $table->string('alamat_kampus')->nullable(
+                
+            );
             $table->timestamps();
 
         });

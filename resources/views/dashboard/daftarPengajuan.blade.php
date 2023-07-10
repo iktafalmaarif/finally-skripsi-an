@@ -17,6 +17,7 @@
                                 cellspacing="0">
                                 <thead>
                                     <tr>
+                                        <th>No</th>
                                         <th>NIK</th>
                                         <th>Nama</th>
                                         <th>Janis Pengajuan</th>
@@ -29,6 +30,7 @@
                                 <tbody>
                                     @foreach($data as $data)
                                     <tr>
+                                        <td>{{$loop->iteration}}</td>
                                         <td>{{$data->nik}}</td>
                                         <td>{{$data->nama_lengkap}}</td>
                                         <td>{{$data->jenis_surat}}</td>
@@ -61,7 +63,11 @@
                                         <td>
                                             <a  href="/approve/{{$data->id_pengajuan}}" class="btn btn-success p-2" data-id="$data->id_pengajuan" data-nama="$data->nama_lengkap" ><i class="fa-solid fa-check"></i></a>
                                             <a class="btn btn-danger p-2"><i class="fa-solid fa-x"></i></a>
+                                            @if($data->jenis_surat == 'Surat Keterangan Tidak Mampu')
                                             <a href="convert/{{$data->id_pengajuan}}" class="btn btn-secondary p-2"><i class="fa-solid fa-print"></i></a>
+                                            @else
+                                            Hallo
+                                            @endif
                                         </td>
                                     </tr>
                                     @endforeach

@@ -17,6 +17,7 @@ class Pengajuan extends Model
         'nomor_surat',
         'ktp',
         'kk',
+        'keperluan',
 
     ];
 }

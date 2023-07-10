@@ -1,20 +1,20 @@
 <html>
 
 <head>
+<title>Surat Keterangan Tidak Mampu | {{$data->nama_lengkap}}</title>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
 <style>
 <!--
 
 
-.line-one {
+		.line-one {
 			border: none;
 			border-bottom: 2px solid black;
 			margin: 0;
 			padding: 0;
 			padding-top: 2%;
 		}
-
 		.line-two {
 			border: none;
 			border-bottom: 5px solid black;
@@ -119,45 +119,45 @@ menerangkan bahwa :</span></p>
 <p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:150%'><span
 lang=IN style='font-size:5.0pt;line-height:150%'>&nbsp;</span></p>
 
-<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
+<p class=MsoNormal style='margin-top:3.0pt;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
 lang=IN style='font-size:11.0pt;line-height:150%'>Nama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-SALMAA AULIA RAHMAYANTI</span></p>
+{{$data->nama_lengkap}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
 lang=IN style='font-size:11.0pt;line-height:150%'>Tempat, Tanggal Lahir &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-Tegal, 30 Oktober 2008</span></p>
+{{$data->tempat_lahir}}, {{$data->tanggal_lahir}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
 lang=IN style='font-size:11.0pt;line-height:150%'>Jenis Kelamin &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-Perempuan</span></p>
+{{$data->jenis_kelamin}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
 lang=IN style='font-size:11.0pt;line-height:150%'>Alamat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-Desa Pagiyanten RT 004 / RW 001 Kecamatan Adiwerna Kabupaten Tegal</span></p>
+{{$data->alamat}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
 lang=IN style='font-size:11.0pt;line-height:150%'>Surat Bukti Diri &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-No. NIK : 3376017010080001</span></p>
+No. NIK : {{$data->nik}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
 lang=IN style='font-size:11.0pt;line-height:150%'>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; No. KK &nbsp;: 3328112804170004</span></p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; No. KK &nbsp;: {{$data->kk}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
 lang=IN style='font-size:11.0pt;line-height:150%'>Agama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-Islam</span></p>
+{{$data->agama}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
 lang=IN style='font-size:11.0pt;line-height:150%'>Pekerjaan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-Pelajar</span></p>
+{{$data->pekerjaan}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
@@ -173,11 +173,11 @@ benar-benar <b>Keluarga Tidak Mampu/ Miskin</b> dan akan digunakan untuk :</span
 
 <p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
 150%'><span lang=IN style='font-size:11.0pt;line-height:150%'>Keperluan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-SYARAT KERINGANAN BIAYA UNTUK</span></p>
+{{$data->keperluan}}</span></p>
 
 <p class=MsoNormal style='margin-left:1.75in;text-align:justify;text-indent:
 .5in;line-height:150%'><span lang=IN style='font-size:11.0pt;line-height:150%'>
-PENDAFTARAN SMP DI SLB MANUNGGAL SLAWI</span></p>
+</span></p>
 
 <p class=MsoNormal style='margin-left:35.45pt;text-align:justify;line-height:
 150%'><span lang=IN style='font-size:11.0pt;line-height:150%'>Keterangan

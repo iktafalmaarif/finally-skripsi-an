@@ -9,15 +9,15 @@
     <div class="col">
         <div class="mb-3">
             <label for="tempatlahir" class="form-label">Tempat Lahir</label>
-            <input type="text" class="form-control" id="tempatlahir" value="{{ $user->tempat_lahir ?? '' }}" name="tempatlahir" placeholder="Tempat Lahir"
-                readonly>
+            <input type="text" class="form-control" id="tempatlahir" value="{{ $user->tempat_lahir ?? '' }}"
+                name="tempatlahir" placeholder="Tempat Lahir" readonly>
         </div>
     </div>
     <div class="col">
         <div class="mb-3">
             <label for="tanggallahir" class="form-label">Tanggal Lahir</label>
-            <input type="text" class="form-control" id="tanggallahir" value="{{ $user->tanggal_lahir ?? '' }}" name="tanggallahir" placeholder="Tanggal Lahir"
-                readonly>
+            <input type="text" class="form-control" id="tanggallahir" value="{{ $user->tanggal_lahir ?? '' }}"
+                name="tanggallahir" placeholder="Tanggal Lahir" readonly>
         </div>
     </div>
 </div>
@@ -28,19 +28,22 @@
             <div class="col">
                 <div class="mb-3">
                     <label for="jk" class="form-label">Jenis Kelamin</label>
-                    <input type="text" class="form-control" id="jk" name="jk" value="{{ $user->jenis_kelamin ?? '' }}" placeholder="Jenis Kelamin" readonly>
+                    <input type="text" class="form-control" id="jk" name="jk" value="{{ $user->jenis_kelamin ?? '' }}"
+                        placeholder="Jenis Kelamin" readonly>
                 </div>
             </div>
             <div class="col">
                 <div class="mb-3">
                     <label for="agama" class="form-label">Agama</label>
-                    <input type="text" class="form-control" id="agama" name="agama" value="{{ $user->agama ?? '' }}" placeholder="Agama" readonly>
+                    <input type="text" class="form-control" id="agama" name="agama" value="{{ $user->agama ?? '' }}"
+                        placeholder="Agama" readonly>
                 </div>
             </div>
             <div class="col">
                 <div class="mb-3">
                     <label for="statusperkawinan" class="form-label">Status Perkawinan</label>
-                    <input type="text" class="form-control" id="statusperkawinan" value="{{ $user->status_perkawinan ?? '' }}" name="statusperkawinan"
+                    <input type="text" class="form-control" id="statusperkawinan"
+                        value="{{ $user->status_perkawinan ?? '' }}" name="statusperkawinan"
                         placeholder="Status Perkawinan" readonly>
                 </div>
             </div>
@@ -51,22 +54,23 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="pekerjaan" class="form-label">Pekerjaan</label>
-                            <input type="text" class="form-control" id="pekerjaan" value="{{ $user->pekerjaan ?? '' }}" name="pekerjaan"
-                                placeholder="Pekerjaan" readonly>
+                            <input type="text" class="form-control" id="pekerjaan" value="{{ $user->pekerjaan ?? '' }}"
+                                name="pekerjaan" placeholder="Pekerjaan" readonly>
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3">
                             <label for="kewarganegaraan" class="form-label">Kewarganegaraan</label>
-                            <input type="text" class="form-control" id="kewarganegaraan" value="{{ $user->kewarganegaraan ?? '' }}" name="kewarganegaraan"
+                            <input type="text" class="form-control" id="kewarganegaraan"
+                                value="{{ $user->kewarganegaraan ?? '' }}" name="kewarganegaraan"
                                 placeholder="Kewarganegaraan" readonly>
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3">
                             <label for="alamat" class="form-label">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" value="{{ $user->alamat ?? '' }}" placeholder="Alamat"
-                                readonly>
+                            <input type="text" class="form-control" id="alamat" name="alamat"
+                                value="{{ $user->alamat ?? '' }}" placeholder="Alamat" readonly>
                         </div>
                     </div>
                 </div>
@@ -77,7 +81,7 @@
 </div>
 
 
-<form action="/pengajuan" method="post" enctype="multipart/form-data"> 
+<form action="/pengajuan" method="post" enctype="multipart/form-data">
     @csrf
     <div class="row">
         <div class="col-6">
@@ -89,7 +93,7 @@
                             aria-label="Default select example" required>
                             <option selected disabled value="">-- Pilih Jenis Surat --</option>
                             <option value="Surat Keterangan Tidak Mampu">Surat Keterangan Tidak Mampu</option>
-                            <option value="Surat Izin Bangunan">Surat Izin Bangunan</option>
+                            <option value="Surat Bidikmisi Universitas">Surat Bidikmisi Universitas</option>
                             <option value="Surat Keterangan Domisili">Surat Keterangan Domisili</option>
                             <option value="Surat Kelahiran Baru">Surat Kelahiran Baru</option>
                             <option value="Surat Keterangan Usaha">Surat Keterangan Usaha</option>
@@ -102,8 +106,8 @@
         </div>
         <div class="col">
             <div class="mb-3">
-                <label class="form-label">ID Penduduk</label>
-                <input type="text" name="id_penduduk"  value="{{ $user->id_penduduk ?? '' }}" class="form-control"readonly>
+                <input type="hidden" name="id_penduduk" value="{{ $user->id_penduduk ?? '' }}" class="form-control"
+                    readonly>
             </div>
         </div>
     </div>
@@ -116,41 +120,81 @@
                         <div class="col">
                             <div class="mb-3">
                                 <label class="form-label">Foto KTP</label>
-                                <input type="file" name="ktp" class="form-control" required>
+                                <input type="file" name="ktp" class="form-control">
                             </div>
                         </div>
                         <div class="col">
                             <div class="mb-3">
                                 <label class="form-label">Foto KK</label>
-                                <input type="file" name="kk" class="form-control" required>
+                                <input type="file" name="kk" class="form-control" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Keperluan</label>
+                                <textarea class="form-control" name="keperluan" placeholder="Keperluan" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>    
+
+            <div id="bidikmisi_section" style="display: none;">
+                <div class="row">
+                    <div class="row">
+                
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label">Foto KK</label>
+                                <input type="text" name="nama_kampus" class="form-control" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Keperluan</label>
+                                <textarea class="form-control" name="alamat_kampus" placeholder="Keperluan" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+
         </div>
     </div>
 
-    <button class="btn btn-primary">AJUKAN SURAT</button>
+    
+
+
+    <button type="submit" class="btn btn-primary">AJUKAN SURAT</button>
+
 </form>
 
 
 <script>
-    function showFormSection() {
-        var jenisSurat = document.getElementById("jenis_surat").value;
-        var formSection = document.getElementById("form_section");
-        var domisiliSection = document.getElementById("domisili_section");
+    document.addEventListener("DOMContentLoaded", function() {
+        var jenisSurat = document.getElementById("jenis_surat");
+        jenisSurat.addEventListener("change", showFormSection);
 
-        if (jenisSurat === "Surat Keterangan Tidak Mampu") {
-            domisiliSection.style.display = "block";
-        } else {
+        function showFormSection() {
+            var selectedOption = jenisSurat.value;
+            var formSection = document.getElementById("form_section");
+            var domisiliSection = document.getElementById("domisili_section");
+            var bidikmisiSection = document.getElementById("bidikmisi_section");
+
             domisiliSection.style.display = "none";
-        }
+            bidikmisiSection.style.display = "none";
 
-        if (jenisSurat !== "") {
-            formSection.style.display = "block";
-        } else {
-            formSection.style.display = "none";
+            if (selectedOption === "Surat Keterangan Tidak Mampu") {
+                domisiliSection.style.display = "block";
+            } else if (selectedOption === "Surat Bidikmisi Universitas") {
+                bidikmisiSection.style.display = "block";
+            }
+
+            formSection.style.display = (selectedOption !== "") ? "block" : "none";
         }
-    }
+    });
 </script>

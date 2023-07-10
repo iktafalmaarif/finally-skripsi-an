@@ -14,7 +14,8 @@
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>ID</th>
+                          <th>No</th>
+                          <th>ID User</th>
                           <th>Nama</th>
                           <th>Email</th>
                           <th>Status</th>
@@ -24,6 +25,7 @@
                       <tbody>
                       @foreach($User as $data)
                         <tr>
+                          <td>{{$loop->iteration}}</td>
                           <td>{{$data->id}}</td>
                           <td>{{$data->name}}</td>
                           <td>{{$data->email}}</td>

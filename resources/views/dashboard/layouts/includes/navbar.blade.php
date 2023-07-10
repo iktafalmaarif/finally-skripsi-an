@@ -66,6 +66,10 @@
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>
+              <a class="dropdown-item">
+                <i class="ti-settings text-primary"></i>
+                Log Out
+              </a>
             </div>
           </li>
         </ul>

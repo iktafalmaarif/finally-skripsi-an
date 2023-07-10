@@ -6,8 +6,8 @@
           <div>
             <h1>Selamat datang di Sistem Pelayanan Surat Masyarakat</h1>
             <h2>Desa Pagiyanten, Kabupaten Tegal</h2>
-            <a href="#about" class="btn btn-primary scrollto">Ajukan Surat</a>
-            <a href="#about" class="btn btn-outline-primary scrollto">Tracking Surat</a>
+            <a href="#ajukan" class="btn btn-primary scrollto">Ajukan Surat</a>
+            <a href="#checking" class="btn btn-outline-primary scrollto">Tracking Surat</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">

@@ -17,6 +17,7 @@
                                     cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>No</th>
                                             <th>NIK</th>
                                             <th>No. Kartu Keluarga</th>
                                             <th>Nama</th>
@@ -31,6 +32,7 @@
                                     <tbody>
                                         @foreach($penduduk as $data)
                                         <tr>
+                                            <td>{{$loop->iteration}}</td>
                                             <td>{{$data->nik}}</td>
                                             <td>{{$data->no_kk}}</td>
                                             <td>{{$data->nama_lengkap}}</td>

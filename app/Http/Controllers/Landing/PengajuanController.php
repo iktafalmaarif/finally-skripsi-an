@@ -13,6 +13,7 @@ class PengajuanController extends Controller
         $pengajuan = new Pengajuan;
         $pengajuan->jenis_surat = $request->input('jenis_surat');
         $pengajuan->id_penduduk = $request->input('id_penduduk');
+        $pengajuan->keperluan = $request->input('keperluan');
         if ($request->hasFile('ktp')) {
             $file = $request->file('ktp');
             $extension = $file->getClientOriginalExtension();
