@@ -5,14 +5,11 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
     public function index()
     {
-        alert()->info('Selamat Datang', 'Silahkan Login');
-
         return view('dashboard.login');
     }
 
@@ -32,13 +29,10 @@ class LoginController extends Controller
             $user = Auth::user();
 
             if ($user->role == 'admin') {
-
-                alert()->success('Selamat Datang', 'Login Berhasil');
-
-                return redirect('/dashboard');
+                return redirect()->intended('/dashboard');
             }
         } else {
-            return back()->with('error', 'Email atau Password salah');
+            return back()->with('toast_error', 'Email atau Password salah');
         }
     }
 

@@ -60,6 +60,8 @@
     <script src="assets/js/todolist.js"></script>
     <script src="assets/js/dashboard.js"></script>
     <script src="assets/js/Chart.roundedBarCharts.js"></script>
+
+    @include('sweetalert::alert')
 </body>
 
 </html>
