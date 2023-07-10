@@ -5,6 +5,7 @@ use App\Http\Controllers\Dashboard\HomeController;
 use App\Http\Controllers\Dashboard\PendudukController;
 use App\Http\Controllers\Dashboard\UsersController;
 use App\Http\Controllers\Dashboard\PengajuanDashController;
+use App\Http\Controllers\Dashboard\LoginController;
 
 
 // Landing Controller
@@ -33,6 +34,7 @@ Route::get('/daftar-pengajuan', [PengajuanDashController::class, 'index'])->name
 Route::get('/form-pengajuan', [PengajuanDashController::class, 'formPengajuan']);
 Route::get('/cari-data', [PengajuanDashController::class, 'search']);
 Route::get('/approve/{id_pengajuan}', [PengajuanDashController::class, 'approve']);
+Route::get('/reject/{id_pengajuan}', [PengajuanDashController::class, 'reject']);
 Route::get('/convert/{id_pengajuan}', [PengajuanDashController::class, 'convert']);
 
 //Penduduk Page
@@ -46,4 +48,14 @@ Route::get('/edit-penduduk', [PendudukController::class, 'edit'])->name('pendudu
 Route::get('/data-user', [UsersController::class, 'index'])->name('Data User');
 Route::get('/form-tambah-user', [UsersController::class, 'formUser']);
 Route::post('/form-tambah-user-add', [UsersController::class, 'store']);
+
+// Login
+Route::get('/login', [LoginController::class, 'login']);
+Route::group(['middleware' => ['guest']], function(){
+    Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+    Route::post('/login', [LoginController::class, 'login'])->name('login.store');
+});
+
+// Logout
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 

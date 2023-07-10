@@ -41,8 +41,6 @@
                                 <div class="col-4">
                                     <div class="mb-3">
                                         <label for="exampleFormControlInput1" class="form-label">Tempat Lahir</label>
-                                        <select id="kota" name="kota">
-                                        </select>
                                         <input type="text" class="form-control" name="tempat_lahir" id="tempat_lahir"
                                             placeholder="Tempat Lahir" required>
                                     </div>
@@ -96,12 +94,7 @@
                                 <div class="col">
                                     <div class="mb-3">
                                         <label for="exampleSelectGender">Pekerjaan</label>
-                                        <select class="form-control" name="pekerjaan" id="pekerjaan" required>
-                                            <option selected disabled value="">-- Pilih Pekerjaan --</option>
-                                            <option value="Wirausaha">Wirausaha</option>
-                                            <option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
-                                            <option value="Belum Bekerja">Belum Bekerja</option>
-                                        </select>
+                                        <input type="text" class="form-control" name="pekerjaan">
                                     </div>
                                 </div>
                                 <div class="col">

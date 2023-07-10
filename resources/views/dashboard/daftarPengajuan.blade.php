@@ -61,12 +61,18 @@
                                             @endif
                                         </td>
                                         <td>
+                                            @if($data->status == NULL)
                                             <a  href="/approve/{{$data->id_pengajuan}}" class="btn btn-success p-2" data-id="$data->id_pengajuan" data-nama="$data->nama_lengkap" ><i class="fa-solid fa-check"></i></a>
-                                            <a class="btn btn-danger p-2"><i class="fa-solid fa-x"></i></a>
-                                            @if($data->jenis_surat == 'Surat Keterangan Tidak Mampu')
-                                            <a href="convert/{{$data->id_pengajuan}}" class="btn btn-secondary p-2"><i class="fa-solid fa-print"></i></a>
+                                            <a href="/reject/{{$data->id_pengajuan}}"class="btn btn-danger p-2"><i class="fa-solid fa-x"></i></a>
                                             @else
-                                            Hallo
+                                            <a style="background-color: grey;" class="btn btn-success p-2" data-id="$data->id_pengajuan" data-nama="$data->nama_lengkap" ><i class="fa-solid fa-check"></i></a>
+                                            <a style="background-color: grey;" class="btn btn-danger p-2"><i class="fa-solid fa-x"></i></a>
+                                            @endif
+
+                                            @if($data->status == 2)
+                                            <a href="convert/{{$data->id_pengajuan}}" class="btn btn-success p-2"><i class="fa-solid fa-print"></i></a>
+                                            @else
+                                            <a class="btn btn-secondary p-2"><i class="fa-solid fa-print"></i></a>
                                             @endif
                                         </td>
                                     </tr>

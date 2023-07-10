@@ -97,7 +97,7 @@
                             <th>NIK</th>
                             <th>Nama</th>
                             <th>Jenis Surat</th>
-                            <th>Nomor Surat</th>
+                            <!-- <th>Nomor Surat</th> -->
                             <th>Status</th>
                             <th>Aksi</th>
                         </tr>
@@ -107,16 +107,46 @@
                             <td>{{ $penduduk[0]->nik }}</td>
                             <td>{{ $penduduk[0]->nama_lengkap }}</td>
                             <td>{{ $penduduk[0]->jenis_surat }}</td>
-                            <td>{{ $penduduk[0]->nomor_surat }}</td>
-                            <td>{{ $penduduk[0]->status }}</td>
+                            <!-- <td>{{ $penduduk[0]->nomor_surat }}</td> -->
+                            <td>
+                                @if($penduduk[0]->status === NULL)
+                                    Menunggu Konfirmasi
+                                @elseif($penduduk[0]->status === 1)
+                                    Pengajuan Di Tolak
+                                @else
+                                    Pengajuan Disetujui
+                                @endif
+                            </td>
+                            <td>
+                                @if($penduduk[0]->status == 2)
+                                    <a href="convert/{{$penduduk[0]->id_pengajuan}}" class="btn btn-success p-2"><i class="bi bi-printer"></i></a>
+                                @else
+                                    <a class="btn btn-secondary p-2"><i class="bi bi-print"></i></a>
+                                @endif
+                            </td>
                         </tr>
                         @foreach($penduduk as $data)
                         <tr>
                             <td>{{ $data->nik }}</td>
                             <td>{{ $data->nama_lengkap }}</td>
                             <td>{{ $data->jenis_surat }}</td>
-                            <td>{{ $data->nomor_surat }}</td>
-                            <td>{{ $data->status }}</td>
+                            <!-- <td>{{ $data->nomor_surat }}</td> -->
+                            <td>
+                                @if($data->status === NULL)
+                                    Menunggu Konfirmasi
+                                @elseif($data->status === 1)
+                                    Pengajuan Di Tolak
+                                @else
+                                    Pengajuan Disetujui
+                                @endif
+                            </td>
+                            <td>
+                                @if($data->status == 2)
+                                    <a href="convert/{{$data->id_pengajuan}}" class="btn btn-success p-2"><i class="bi bi-printer"></i></a>
+                                @else
+                                    <a class="btn btn-secondary p-2"><i class="bi bi-printer"></i></a>
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

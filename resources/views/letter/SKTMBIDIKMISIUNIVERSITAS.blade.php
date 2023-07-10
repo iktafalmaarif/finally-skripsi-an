@@ -100,7 +100,7 @@ padding:0in'><b><span lang=IN>&nbsp;</span></b></p>
 lang=IN><span style='text-decoration:none'>&nbsp;</span></span></u></b></p>
 
 <p class=MsoNormal align=center style='text-align:center;line-height:150%'><b><u><span
-lang=IN style='font-size:16.0pt;line-height:150%'>SURAT KETERANGAN TIDAK MAMPU</span></u></b></p>
+lang=IN style='font-size:16.0pt;line-height:150%'>SURAT KETERANGAN TIDAK MAMPU BIDIKMISI</span></u></b></p>
 
 <p class=MsoNormal align=center style='text-align:center;line-height:150%'><span
 lang=IN>Nomor : 471 / 04 / SKTM / 012 / II / 2023    </span></p>
@@ -115,7 +115,7 @@ Adiwerna Kabupaten Tegal, dengan ini menerangkan bahwa :</span></p>
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
 lang=IN>Nama                                       : </span><span lang=IN
-style='font-family:"Bookman Old Style",serif'>KHASANAH YULI YANTI</span></p>
+style='font-family:"Bookman Old Style",serif'>{{$data->nama_lengkap}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span

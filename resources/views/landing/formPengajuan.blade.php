@@ -95,6 +95,7 @@
                             <option value="Surat Keterangan Tidak Mampu">Surat Keterangan Tidak Mampu</option>
                             <option value="Surat Bidikmisi Universitas">Surat Bidikmisi Universitas</option>
                             <option value="Surat Keterangan Domisili">Surat Keterangan Domisili</option>
+                            <option value="Surat Keterangan Belum Menikah">Surat Keterangan Belum Menikah</option>
                             <option value="Surat Kelahiran Baru">Surat Kelahiran Baru</option>
                             <option value="Surat Keterangan Usaha">Surat Keterangan Usaha</option>
                             <option value="Surat Keterangan SKCK">Surat Keterangan SKCK</option>
@@ -114,7 +115,7 @@
 
     <div class="row">
         <div id="form_section" style="display: none;">
-            <div id="domisili_section" style="display: none;">
+            <!-- <div id="domisili_section" style="display: none;">
                 <div class="row">
                     <div class="row">
                         <div class="col">
@@ -139,16 +140,15 @@
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div> -->
 
             <div id="bidikmisi_section" style="display: none;">
                 <div class="row">
                     <div class="row">
-                
                         <div class="col">
                             <div class="mb-3">
                                 <label class="form-label">Foto KK</label>
-                                <input type="text" name="nama_kampus" class="form-control" >
+                                <input type="file" name="nama_kampus" class="form-control" >
                             </div>
                         </div>
                     </div>
@@ -161,12 +161,76 @@
                         </div>
                     </div>
                 </div>
-            </div>           
+            </div>
 
+            <div id="usaha_section" style="display: none;">
+                <div class="row">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label">Foto KTP Pemilik Usaha</label>
+                                <input type="file" name="ktp_pemilik_usaha" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label">Foto KK</label>
+                                <input type="file" name="kk_pemilik_usaha" class="form-control" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Keperluan</label>
+                                <textarea class="form-control" name="alamat_kampus" placeholder="Keperluan" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="domisili_section" style="display: none;">
+                <div class="row">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label">Foto KTP</label>
+                                <input type="file" name="ktp" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label">Foto KK</label>
+                                <input type="file" name="kk" class="form-control" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="belum_menikah_section" style="display: none;">
+                <div class="row">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label">Foto KTP</label>
+                                <input type="file" name="ktp" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label">Foto KK</label>
+                                <input type="file" name="kk" class="form-control" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    
+
 
 
     <button type="submit" class="btn btn-primary">AJUKAN SURAT</button>
@@ -184,14 +248,22 @@
             var formSection = document.getElementById("form_section");
             var domisiliSection = document.getElementById("domisili_section");
             var bidikmisiSection = document.getElementById("bidikmisi_section");
+            var usahaSection = document.getElementById("usaha_section");
+            var belumMenikahSection = document.getElementById("belum_menikah_section");
 
             domisiliSection.style.display = "none";
             bidikmisiSection.style.display = "none";
+            usahaSection.style.display = "none";
+            belumMenikahSection.style.display = "none";
 
             if (selectedOption === "Surat Keterangan Tidak Mampu") {
                 domisiliSection.style.display = "block";
             } else if (selectedOption === "Surat Bidikmisi Universitas") {
                 bidikmisiSection.style.display = "block";
+            }else if (selectedOption === "Surat Keterangan Usaha"){
+                usahaSection.style.display = "block";
+            }else if (selectedOption === "Surat Keterangan Belum Menikah"){
+                belumMenikahSection.style.display = "block";
             }
 
             formSection.style.display = (selectedOption !== "") ? "block" : "none";

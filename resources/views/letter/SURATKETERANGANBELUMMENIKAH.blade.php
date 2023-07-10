@@ -133,54 +133,43 @@ lang=IN style='font-size:8.0pt;line-height:115%;font-family:"Bookman Old Style",
 
 <p class=MsoNormal style='margin-left:.5in;text-align:justify;line-height:150%'><span
 style='font-family:"Bookman Old Style",serif'>Nama                             :
-</span><span lang=IN style='font-family:"Bookman Old Style",serif'>ANIZAH
-KUSUMANINGRUM</span></p>
+</span><span lang=IN style='font-family:"Bookman Old Style",serif'>{{$data->nama_lengkap}}</span></p>
 
 <p class=MsoNormal style='margin-left:.5in;text-align:justify;line-height:150%'><span
 style='font-family:"Bookman Old Style",serif'>Tempat / Tgl Lahir         : </span><span
-lang=IN style='font-family:"Bookman Old Style",serif'>Tegal, 24 September 2005</span></p>
+lang=IN style='font-family:"Bookman Old Style",serif'>{{$data->tempat_lahir}}, {{$data->tanggal_lahir}}</span></p>
 
 <p class=MsoNormal style='margin-left:.5in;text-align:justify;line-height:150%'><span
 style='font-family:"Bookman Old Style",serif'>Jenis Kelamin                : </span><span
-lang=IN style='font-family:"Bookman Old Style",serif'>Perempuan</span></p>
+lang=IN style='font-family:"Bookman Old Style",serif'>{{$data->jenis_kelamin}}</span></p>
 
 <p class=MsoNormal style='margin-left:.5in;text-align:justify;line-height:150%'><span
 style='font-family:"Bookman Old Style",serif'>Agama                            :
-</span><span lang=IN style='font-family:"Bookman Old Style",serif'>Islam</span></p>
+</span><span lang=IN style='font-family:"Bookman Old Style",serif'>{{$data->agama}}</span></p>
 
 <p class=MsoNormal style='margin-left:.5in;text-align:justify;line-height:150%'><span
 style='font-family:"Bookman Old Style",serif'>Alamat                           :
-</span><span lang=IN style='font-family:"Bookman Old Style",serif'>Desa
-Pagiyanten </span><span style='font-family:"Bookman Old Style",serif'>RT</span><span
-lang=IN style='font-family:"Bookman Old Style",serif'> 008/ RW 002</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-align:justify;line-height:150%'><span
-style='font-family:"Bookman Old Style",serif'>                               </span><span
-lang=IN style='font-family:"Bookman Old Style",serif'>          </span><span
-style='font-family:"Bookman Old Style",serif'>Kecamatan </span><span lang=IN
-style='font-family:"Bookman Old Style",serif'>Adiwerna</span><span
-style='font-family:"Bookman Old Style",serif'> Kabupaten </span><span lang=IN
-style='font-family:"Bookman Old Style",serif'>Tegal</span></p>
+</span><span lang=IN style='font-family:"Bookman Old Style",serif'>{{$data->alamat}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
 lang=IN style='font-family:"Bookman Old Style",serif'>Surat Bukti Diri             :
-No. NIK     : 3328116409050005</span></p>
+No. NIK     : {{$data->nik}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
 lang=IN style='font-family:"Bookman Old Style",serif'>                                        
-No. KK      : 3328112402080448</span></p>
+No. KK      : {{$data->no_kk}}</span></p>
 
 <p class=MsoNormal style='margin-left:.5in;text-align:justify;line-height:150%'><span
 style='font-family:"Bookman Old Style",serif'>Pekerjaan             </span><span
 lang=IN style='font-family:"Bookman Old Style",serif'>          </span><span
 style='font-family:"Bookman Old Style",serif'>: </span><span lang=IN
-style='font-family:"Bookman Old Style",serif'>Pelajar</span></p>
+style='font-family:"Bookman Old Style",serif'>{{$data->pekerjaan}}</span></p>
 
 <p class=MsoNormal style='margin-left:.5in;text-align:justify;line-height:150%'><span
 lang=IN style='font-family:"Bookman Old Style",serif'>Kewarganegaraan          :
-Indonesia</span></p>
+{{$data->kewarganegaraan}}</span></p>
 
 <p class=MsoNormal style='text-align:justify;line-height:150%'><span lang=IN
 style='font-size:9.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>&nbsp;</span></p>

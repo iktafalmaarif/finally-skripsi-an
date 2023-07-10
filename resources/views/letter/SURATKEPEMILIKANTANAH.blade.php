@@ -102,7 +102,7 @@ lang=IN style='font-size:5.0pt;line-height:150%'><span style='text-decoration:
 lang=IN><span style='text-decoration:none'>&nbsp;</span></span></u></b></p>
 
 <p class=MsoNormal align=center style='text-align:center;line-height:150%'><b><u><span
-lang=IN style='font-size:16.0pt;line-height:150%'>SURAT KETERANGAN</span></u></b></p>
+lang=IN style='font-size:16.0pt;line-height:150%'>SURAT KEPEMILIKAN TANAH</span></u></b></p>
 
 <p class=MsoNormal align=center style='text-align:center;line-height:150%'><span
 lang=IN>Nomor : 480 / 04 / 037 / II / 2023</span></p>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Landing;
 use App\Http\Controllers\Controller;
 use App\Models\Penduduk;
+use App\Models\Pengajuan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,7 +28,7 @@ class LandingController extends Controller
     $penduduk = DB::table('penduduks')
         ->join('pengajuans', 'penduduks.id_penduduk', '=', 'pengajuans.id_penduduk')
         ->where('penduduks.nik', $nik)
-        ->select('penduduks.*', 'pengajuans.jenis_surat', 'pengajuans.nomor_surat', 'pengajuans.status')
+        ->select('penduduks.*', 'pengajuans.jenis_surat', 'pengajuans.nomor_surat', 'pengajuans.status', 'pengajuans.id_pengajuan')
         ->get();
 
     if ($penduduk->isNotEmpty()) {

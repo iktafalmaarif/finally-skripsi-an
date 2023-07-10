@@ -7,7 +7,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <img src="{{ asset('image/ktp/' . $data->ktp) }}" alt="Gambar">
+      <img src="{{ asset('storage/image/ktp/' . $data->ktp) }}" alt="Gambar" style="width: 400px; height: auto;">
       </div>
     </div>
   </div>
