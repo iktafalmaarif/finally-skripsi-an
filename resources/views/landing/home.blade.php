@@ -125,30 +125,6 @@
                                 @endif
                             </td>
                         </tr>
-                        @foreach($penduduk as $data)
-                        <tr>
-                            <td>{{ $data->nik }}</td>
-                            <td>{{ $data->nama_lengkap }}</td>
-                            <td>{{ $data->jenis_surat }}</td>
-                            <!-- <td>{{ $data->nomor_surat }}</td> -->
-                            <td>
-                                @if($data->status === NULL)
-                                    Menunggu Konfirmasi
-                                @elseif($data->status === 1)
-                                    Pengajuan Di Tolak
-                                @else
-                                    Pengajuan Disetujui
-                                @endif
-                            </td>
-                            <td>
-                                @if($data->status == 2)
-                                    <a href="convert/{{$data->id_pengajuan}}" class="btn btn-success p-2"><i class="bi bi-printer"></i></a>
-                                @else
-                                    <a class="btn btn-secondary p-2"><i class="bi bi-printer"></i></a>
-                                @endif
-                            </td>
-                        </tr>
-                        @endforeach
                     </tbody>
                 </table>
                 @elseif(isset($error))

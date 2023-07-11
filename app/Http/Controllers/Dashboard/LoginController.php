@@ -5,43 +5,49 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use App\Models\User;
+
+
 
 class LoginController extends Controller
 {
-    public function index()
-    {
+
+
+    public function index(){
         return view('dashboard.login');
     }
 
-    public function login(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
 
-        $auth = $request->only('email', 'password');
+    public function login(Request $request){
 
-        if (Auth::attempt($auth)) {
+        $data = [
+            'email' => $request->email,
+            'password' => $request->password
+        ];
+
+        if (Auth::attempt($data)) {
             $request->session()->regenerate();
-
-            // Periksa level pengguna setelah berhasil login
             $user = Auth::user();
-
-            if ($user->role == 'admin') {
-                return redirect()->intended('/dashboard');
+            if ($user->level == 'Admin') {
+                alert()->success('Berhasil', 'Berhasil Login');
+                return redirect('/dashboard');
+            } else {
+                Auth::logout();
+                Session::flash('error', 'Level pengguna tidak valid');
+                return redirect('/login');
             }
         } else {
-            return back()->with('toast_error', 'Email atau Password salah');
+            Session::flash('error', 'Email atau Password Salah');
+            return redirect('/login');
         }
-    }
+}
 
-    public function logout(Request $request)
-    {
-        Auth::logout();
-        request()->session()->invalidate();
-        request()->session()->regenerateToken();
+public function logout(Request $request){
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    return redirect('/login');         
+}
 
-        return redirect('/login');
-    }
 }

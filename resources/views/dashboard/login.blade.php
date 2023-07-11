@@ -23,12 +23,17 @@
                                 <img src="assets/images/logo.svg" alt="logo">
                             </div>
                             <h4>Hallo! Selamat datang</h4>
+                            @if(Session::has('error'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('error') }}
+                                </div>
+                            @endif
                             <h6 class="font-weight-light">Silahkan login untuk masuk</h6>
-                            <form action="{{ route('login.store') }}" method="POST" class="pt-3">
+                            <form action="/action-login" method="POST" class="pt-3">
                                 @csrf
                                 <div class="form-group">
                                     <input name="email" type="email" class="form-control form-control-lg"
-                                        id="Email1" placeholder="Username">
+                                        id="Email1" placeholder="Email">
                                 </div>
                                 <div class="form-group">
                                     <input name="password" type="password" class="form-control form-control-lg"
@@ -38,9 +43,6 @@
                                     <button type="submit"
                                         class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">LOGIN</button>
                                 </div>
-                                <!-- <div class="my-2 d-flex justify-content-between align-items-center">
-                  <a href="#" class="auth-link text-black">Forgot password?</a>
-                </div> -->
                             </form>
                         </div>
                     </div>
