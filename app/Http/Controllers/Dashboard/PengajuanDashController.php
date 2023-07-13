@@ -85,12 +85,12 @@ class PengajuanDashController extends Controller
             $pdf = PDF::loadView('letter.SKTM', ['data' => $data]);
         } elseif ($jenis == 'Surat Bidikmisi Universitas') {
             $pdf = PDF::loadView('letter.SKTMBIDIKMISIUNIVERSITAS', ['data' => $data]);
-        } elseif ($jenis == 'Surat Kepemilikan Tanah') {
+        } elseif ($jenis == 'Surat Izin Hajatan') {
             $pdf = PDF::loadView('letter.SURATKETERANGANIJINHAJATAN', ['data' => $data]);
         } elseif ($jenis == 'Surat Keterangan Belum Menikah') {
-            $pdf = PDF::loadView('letter.SURATKETERANGANDOMISILI', ['data' => $data]);
-        } elseif ($jenis == 'Surat Keterangan Domisili') {
             $pdf = PDF::loadView('letter.SURATKETERANGANBELUMMENIKAH', ['data' => $data]);
+        } elseif ($jenis == 'Surat Keterangan Domisili') {
+            $pdf = PDF::loadView('letter.SURATKETERANGANDOMISILI', ['data' => $data]);
         } elseif ($jenis == 'Surat Keterangan Belum Memiliki Rumah') {
             $pdf = PDF::loadView('letter.SURATKETERANGANBELUMMEMILIKIRUMAH', ['data' => $data]);
         } elseif ($jenis == 'Surat Keterangan Belum Memiliki Rumah') {

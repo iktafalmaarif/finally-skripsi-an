@@ -130,11 +130,9 @@
                                             <select class="form-control" name="jenis_surat" id="jenis_surat"
                                                 onchange="showFormSection()" required>
                                                 <option selected disabled value="">-- Pilih Jenis Surat --</option>
-                                                <option value="Surat Keterangan Tidak Mampu">Surat Keterangan Tidak
-                                                    Mampu</option>
+                                                <option value="Surat Keterangan Tidak Mampu">Surat Keterangan Tidak Mampu</option>
                                                 <option value="Surat Bidikmisi Universitas">Surat Bidikmisi Universitas</option>
-                                                <option value="Surat Keterangan Domisili">Surat Keterangan Domisili
-                                                </option>
+                                                <option value="Surat Keterangan Domisili">Surat Keterangan Domisili</option>
                                                 <option value="Surat Kelahiran Baru">Surat Kelahiran Baru</option>
                                                 <option value="Surat Keterangan Usaha">Surat Keterangan Usaha</option>
                                                 <option value="Surat Keterangan SKCK">Surat Keterangan SKCK</option>

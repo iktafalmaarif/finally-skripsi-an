@@ -25,6 +25,7 @@
                                         <th>KTP</th>
                                         <th>KK</th>
                                         <th>Status</th>
+                                        <th>Preview</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -71,6 +72,12 @@
                                             <label class="badge badge-danger">Ditolak</label>
                                             @elseif($data->status == '2' )
                                             <label class="badge badge-success">Disetujui</label>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($data->status == NULL)
+                                            <a href="convert/{{$data->id_pengajuan}}" class="btn btn-success p-2"><i class="fa-solid fa-print"></i></a>
+                                            @else
                                             @endif
                                         </td>
                                         <td>
