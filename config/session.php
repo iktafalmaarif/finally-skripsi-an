@@ -170,6 +170,11 @@ return [
 
     'secure' => env('SESSION_SECURE_COOKIE'),
 
+
+    'flash' => [
+        'old' => 'log',
+        'new' => 'log',
+    ],
     /*
     |--------------------------------------------------------------------------
     | HTTP Access Only
@@ -179,7 +184,7 @@ return [
     | value of the cookie and the cookie will only be accessible through
     | the HTTP protocol. You are free to modify this option if needed.
     |
-    */
+    *
 
     'http_only' => true,
 

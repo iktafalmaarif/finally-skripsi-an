@@ -27,11 +27,11 @@ class UsersController extends Controller
         $user->email = $request->input('email');
         $user->status = $request->input('status');
         $user->level = $request->input('level');
-        $user->password = $request->input('password');
+        $user->password = bcrypt($request->input('password'));
 
         $user->save();
         alert()->success('Berhasil', 'Data Penduduk Berhasil ditambahkan');
 
-        return redirect()->route('Data Penduduk')->with('status', 'Data Telah Ditambahkan');
+        return redirect()->route('Data User')->with('status', 'Data Telah Ditambahkan');
     }
 }

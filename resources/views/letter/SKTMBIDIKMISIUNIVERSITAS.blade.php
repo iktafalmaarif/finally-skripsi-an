@@ -84,8 +84,8 @@ style='font-size:11.0pt;font-family:"Times New Roman",serif'> </span></i><i><spa
 style='font-size:11.0pt;font-family:"Times New Roman",serif'>Tegal Kode Pos :
 52194</span></i></p>
 
-<hr class="line-one">
-		<hr class="line-two">
+	<hr class="line-one">
+	<hr class="line-two">
 
 <div style='border:none;border-bottom:double windowtext 4.5pt;padding:0in 0in 1.0pt 0in'>
 

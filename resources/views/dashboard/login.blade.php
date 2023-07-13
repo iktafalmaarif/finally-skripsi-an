@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skydash Admin</title>
+    <title>SURPEMAS - PAGIYANTEN</title>
     <link rel="stylesheet" href="assets/vendors/feather/feather.css">
     <link rel="stylesheet" href="assets/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="assets/css/vertical-layout-light/style.css">
-    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <link rel="shortcut icon" href="assets/images/surpemas1.png" />
 </head>
 
 <body>
@@ -20,7 +20,7 @@
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                             <div class="brand-logo">
-                                <img src="assets/images/logo.svg" alt="logo">
+                                <img src="assets/images/surpemas.png" alt="logo">
                             </div>
                             <h4>Hallo! Selamat datang</h4>
                             @if(Session::has('error'))
@@ -28,6 +28,7 @@
                                     {{ Session::get('error') }}
                                 </div>
                             @endif
+                            @include('sweetalert::alert')
                             <h6 class="font-weight-light">Silahkan login untuk masuk</h6>
                             <form action="/action-login" method="POST" class="pt-3">
                                 @csrf

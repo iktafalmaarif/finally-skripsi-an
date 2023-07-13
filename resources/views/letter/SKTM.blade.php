@@ -203,7 +203,7 @@ Kami buat dengan sebenarnya dan untuk dapat dipergunakan sebagamana mestinya.</s
 
 <p class=MsoNormal style='margin-left:5.0in;text-align:justify;line-height:
 150%'><span lang=IN style='font-size:11.0pt;line-height:150%'>Pagiyanten,
-13 Juni 2023</span></p>
+{{ date('d') }} {{ date('M') }} {{ date('Y') }}</span></p>
 
 <p class=MsoNormal style='margin-top:2.0pt;margin-right:0in;margin-bottom:2.0pt;
 margin-left:5.0in'><span lang=IN style='font-size:11.0pt'>

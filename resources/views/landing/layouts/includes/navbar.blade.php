@@ -1,4 +1,3 @@
-<!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
       <div class="logo me-auto">
@@ -6,11 +5,11 @@
       </div>
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#service">Service</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="{{ route('login.index') }} ">Login</a></li>
+          <li><a class="nav-link scrollto" href="#hero">Beranda</a></li>
+          <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
+          <li><a class="nav-link scrollto" href="#service">Pelayanan</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
+          <li><a class="getstarted scrollto" href="{{ route('login.index') }} ">Masuk</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>

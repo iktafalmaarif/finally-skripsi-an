@@ -26,5 +26,11 @@
               <span class="menu-title">Daftar Pengajuan</span>
             </a>
           </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">
+            <i class="ti-power-off text-primary menu-icon"></i>
+              <span class="menu-title">Logout</span>
+            </a>
+          </li> 
         </ul>
       </nav>

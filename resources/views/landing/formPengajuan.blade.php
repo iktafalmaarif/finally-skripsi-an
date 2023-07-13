@@ -94,12 +94,10 @@
                             <option selected disabled value="">-- Pilih Jenis Surat --</option>
                             <option value="Surat Keterangan Tidak Mampu">Surat Keterangan Tidak Mampu</option>
                             <option value="Surat Bidikmisi Universitas">Surat Bidikmisi Universitas</option>
-                            <option value="Surat Keterangan Domisili">Surat Keterangan Domisili</option>
+                            <option value="Surat Izin Hajatan">Surat Izin Hajatan</option>
                             <option value="Surat Keterangan Belum Menikah">Surat Keterangan Belum Menikah</option>
-                            <option value="Surat Kelahiran Baru">Surat Kelahiran Baru</option>
+                            <option value="Surat Keterangan Tinggal Bersama Orang Tua">Surat Keterangan Tinggal Bersama Orang Tua</option>
                             <option value="Surat Keterangan Usaha">Surat Keterangan Usaha</option>
-                            <option value="Surat Keterangan SKCK">Surat Keterangan SKCK</option>
-                            <option value="Surat Kematian">Surat Kematian</option>
                         </select>
                     </div>
                 </div>
@@ -115,75 +113,34 @@
 
     <div class="row">
         <div id="form_section" style="display: none;">
-            <!-- <div id="domisili_section" style="display: none;">
-                <div class="row">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3">
-                                <label class="form-label">Foto KTP</label>
-                                <input type="file" name="ktp" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="mb-3">
-                                <label class="form-label">Foto KK</label>
-                                <input type="file" name="kk" class="form-control" >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">Keperluan</label>
-                                <textarea class="form-control" name="keperluan" placeholder="Keperluan" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-                        </div>
-                    </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-3">
+                     <label class="form-label">Foto KTP</label>
+                     <input type="file" name="ktp" class="form-control">
                 </div>
-            </div> -->
+             </div>
+         <div class="col-6">
+            <div class="mb-3">
+                <label class="form-label">Foto KK</label>
+                <input type="file" name="kk" class="form-control">
+            </div>
+        </div>
+    </div>
 
             <div id="bidikmisi_section" style="display: none;">
                 <div class="row">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-6">
                             <div class="mb-3">
-                                <label class="form-label">Foto KK</label>
-                                <input type="file" name="nama_kampus" class="form-control" >
+                                <label class="form-label">Nama Kampus</label>
+                                <input type="text" name="nama_kampus" class="form-control" placeholder="Nama Kampus">
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
+                        <div class="col-6">
                             <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">Keperluan</label>
-                                <textarea class="form-control" name="alamat_kampus" placeholder="Keperluan" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="usaha_section" style="display: none;">
-                <div class="row">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3">
-                                <label class="form-label">Foto KTP Pemilik Usaha</label>
-                                <input type="file" name="ktp_pemilik_usaha" class="form-control" >
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="mb-3">
-                                <label class="form-label">Foto KK</label>
-                                <input type="file" name="kk_pemilik_usaha" class="form-control" >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">Keperluan</label>
-                                <textarea class="form-control" name="alamat_kampus" placeholder="Keperluan" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <label class="form-label">Alamat Kampus</label>
+                                <input type="text" name="alamat_kampus" class="form-control" placeholder="Alamat Kampus" >
                             </div>
                         </div>
                     </div>
@@ -192,51 +149,93 @@
 
             <div id="domisili_section" style="display: none;">
                 <div class="row">
-                    <div class="row">
-                        <div class="col">
+                    <div class="col">
                             <div class="mb-3">
-                                <label class="form-label">Foto KTP</label>
-                                <input type="file" name="ktp" class="form-control" >
+                                <label class="form-label">Keperluan</label>
+                                <input type="text" name="keperluan" class="form-control" placeholder="Keperluan">
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="mb-3">
-                                <label class="form-label">Foto KK</label>
-                                <input type="file" name="kk" class="form-control" >
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            <div id="belum_menikah_section" style="display: none;">
+            <div id="hajatan_section" style="display: none;">
                 <div class="row">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3">
-                                <label class="form-label">Foto KTP</label>
-                                <input type="file" name="ktp" class="form-control" >
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="mb-3">
-                                <label class="form-label">Foto KK</label>
-                                <input type="file" name="kk" class="form-control" >
-                            </div>
-                        </div>
-                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label class="form-label">Mulai Hajatan</label>
+                            <input type="date" name="mulai_hajatan" class="form-control" placeholder="Hari Hajatan">
+                         </div>
+                     </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label class="form-label">Akhir Hajatan</label>
+                            <input type="date" name="akhir_hajatan" class="form-control" placeholder="Hari Hajatan">
+                         </div>
+                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label class="form-label">Tempat Hajatan</label>
+                            <input type="text" name="tempat_hajatan" class="form-control" placeholder="Tempat Hajatan">
+                            <div id="emailHelp" class="form-text">Contoh : Area Rumah</div>
+                         </div>
+                     </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label class="form-label">Hiburan</label>
+                            <input type="text" name="hiburan_hajatan" class="form-control" placeholder="Hiburan">
+                            <div id="emailHelp" class="form-text">Contoh : Musik Gambus / Tidak Ada</div>
+                         </div>
+                     </div>
                 </div>
             </div>
+
+            <div id="belumMenikah_section" style="display: none;">
+                <div class="row">
+                </div>
+            </div>
+
+
+            <div id="belumMemilikiRumah_section" style="display: none;">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label class="form-label">Keperluan Tambahan</label>
+                            <input type="text" name="keperluan_tambahan" class="form-control" placeholder="Keperluan Tambahan">
+                            <div id="emailHelp" class="form-text">Contoh : Untuk Persyaratan Memiliki Rumah di Perumahan X</div>
+                        </div>
+                    </div>
+            </div>
+
+            <div id="tinggalBersama_section" style="display: none;">         
+            </div>
+
+            <div id="usaha_section" style="display: none;">
+            </div>
+
+            <div id="hargaTanah_section" style="display: none;">
+            </div>
+
         </div>
     </div>
 
-
-
-
-    <button type="submit" class="btn btn-primary">AJUKAN SURAT</button>
+    <button type="submit" id="btn_ajukan" class="btn btn-primary">AJUKAN SURAT</button>
 
 </form>
 
+
+<script>
+    window.onload = function() {
+        var idPenduduk = "{{ $user->id_penduduk ?? '' }}";
+        var jenisSuratSelect = document.getElementById("jenis_surat");
+        var buttonAjukan = document.getElementById("btn_ajukan");
+
+        if (idPenduduk === '') {
+            jenisSuratSelect.disabled = true;
+            buttonAjukan.disabled = true;
+        }
+    };
+</script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -248,22 +247,39 @@
             var formSection = document.getElementById("form_section");
             var domisiliSection = document.getElementById("domisili_section");
             var bidikmisiSection = document.getElementById("bidikmisi_section");
+            var hajatanSection = document.getElementById("hajatan_section");
+            var belumMenikahSection = document.getElementById("belumMenikah_section");
+            var belumMemilikiRumahSection = document.getElementById("belumMemilikiRumah_section");
+            var tinggalBersamaSection = document.getElementById("tinggalBersama_section");
             var usahaSection = document.getElementById("usaha_section");
-            var belumMenikahSection = document.getElementById("belum_menikah_section");
+            var hargaTanahSection = document.getElementById("hargaTanah_section");
+
 
             domisiliSection.style.display = "none";
             bidikmisiSection.style.display = "none";
-            usahaSection.style.display = "none";
+            hajatanSection.style.display = "none";
             belumMenikahSection.style.display = "none";
+            belumMemilikiRumahSection.style.display = "none";
+            tinggalBersamaSection.style.display = "none";
+            usahaSection.style.display = "none";
+            hargaTanahSection.style.display = "none";
 
             if (selectedOption === "Surat Keterangan Tidak Mampu") {
                 domisiliSection.style.display = "block";
             } else if (selectedOption === "Surat Bidikmisi Universitas") {
-                bidikmisiSection.style.display = "block";
-            }else if (selectedOption === "Surat Keterangan Usaha"){
-                usahaSection.style.display = "block";
-            }else if (selectedOption === "Surat Keterangan Belum Menikah"){
-                belumMenikahSection.style.display = "block";
+                bidikmisiSection.style.display = "block"
+            } else if (selectedOption === "Surat Izin Hajatan") {
+                hajatanSection.style.display = "block"
+            } else if (selectedOption === "Surat Keterangan Belum Menikah") {
+                belumMenikahSection.style.display = "block"
+            } else if (selectedOption === "Surat Keterangan Belum Memiliki Rumah") {
+                belumMemilikiRumahSection.style.display = "block"
+            } else if (selectedOption === "Surat Keterangan Tinggal Bersama Orang Tua") {
+                tinggalBersamaSection.style.display = "block"
+            } else if (selectedOption === "Surat Keterangan Usaha") {
+                usahaSection.style.display = "block"
+            } else if (selectedOption === "Surat Keterangan Harga Tanah") {
+                hargaTanahSection.style.display = "block"
             }
 
             formSection.style.display = (selectedOption !== "") ? "block" : "none";

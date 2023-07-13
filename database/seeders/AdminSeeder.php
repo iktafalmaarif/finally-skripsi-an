@@ -13,11 +13,11 @@ class AdminSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'kandar',
-            'email' => 'admin@gmail.com',
-            'password' => bcrypt('admin'),
-            'status' => '1',
-            'level' => 'Admin',
+            'name' => 'Super Admin',
+            'email' => 'superadmin@gmail.com',
+            'password' => bcrypt('superadmin'),
+            'status' => 'Aktif',
+            'level' => 'Master Admin',
         ]);
     }
 }

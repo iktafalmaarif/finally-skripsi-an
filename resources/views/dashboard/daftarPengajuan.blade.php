@@ -18,9 +18,10 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th>No Surat</th>
                                         <th>NIK</th>
                                         <th>Nama</th>
-                                        <th>Janis Pengajuan</th>
+                                        <th>Jenis Pengajuan</th>
                                         <th>KTP</th>
                                         <th>KK</th>
                                         <th>Status</th>
@@ -31,13 +32,25 @@
                                     @foreach($data as $data)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
+                                        <td>
+                                        @if($data->nomor_surat == NULL)
+                                            <!-- Button modal KTP -->
+                                            <button type="button" class="btn btn-secondary p-2" data-bs-toggle="modal"
+                                                data-bs-target="#ModalNo{{$data->id_pengajuan}}">
+                                               Edit No Surat
+                                            </button>
+                                            @include('dashboard.modalEditNo');
+                                        @else
+                                        {{$data->nomor_surat}}                                
+                                        @endif 
+                                        </td>    
                                         <td>{{$data->nik}}</td>
                                         <td>{{$data->nama_lengkap}}</td>
                                         <td>{{$data->jenis_surat}}</td>
                                         <td>
                                             <!-- Button modal KTP -->
                                             <button type="button" class="btn btn-primary p-2" data-bs-toggle="modal"
-                                                data-bs-target="#ModalKTP">
+                                                data-bs-target="#ModalKTP{{$data->id_pengajuan}}">
                                                 <i class="fa-solid fa-eye"></i>
                                             </button>
                                             @include('dashboard.modalViewKTP');
@@ -45,7 +58,7 @@
                                         <td>
                                             <!-- Button modal KK -->
                                             <button type="button" class="btn btn-primary p-2" data-bs-toggle="modal"
-                                                data-bs-target="#ModalKK">
+                                                data-bs-target="#ModalKK{{$data->id_pengajuan}}">
                                                 <i class="fa-solid fa-eye"></i>
                                             </button>
                                             @include('dashboard.modalViewKK');
@@ -62,17 +75,14 @@
                                         </td>
                                         <td>
                                             @if($data->status == NULL)
-                                            <a  href="/approve/{{$data->id_pengajuan}}" class="btn btn-success p-2" data-id="$data->id_pengajuan" data-nama="$data->nama_lengkap" ><i class="fa-solid fa-check"></i></a>
-                                            <a href="/reject/{{$data->id_pengajuan}}"class="btn btn-danger p-2"><i class="fa-solid fa-x"></i></a>
+                                            <a  class="btn btn-success p-2 upprove" data-id="{{$data->id_pengajuan}}" data-nama="{{$data->nama_lengkap}}" ><i class="fa-solid fa-check"></i></a>
+                                            <a  class="btn btn-danger p-2 reject" data-id="{{$data->id_pengajuan}}" data-nama="{{$data->nama_lengkap}}"><i class="fa-solid fa-x"></i></a>
                                             @else
-                                            <a style="background-color: grey;" class="btn btn-success p-2" data-id="$data->id_pengajuan" data-nama="$data->nama_lengkap" ><i class="fa-solid fa-check"></i></a>
-                                            <a style="background-color: grey;" class="btn btn-danger p-2"><i class="fa-solid fa-x"></i></a>
                                             @endif
 
                                             @if($data->status == 2)
                                             <a href="convert/{{$data->id_pengajuan}}" class="btn btn-success p-2"><i class="fa-solid fa-print"></i></a>
                                             @else
-                                            <a class="btn btn-secondary p-2"><i class="fa-solid fa-print"></i></a>
                                             @endif
                                         </td>
                                     </tr>
@@ -88,23 +98,20 @@
     </div>
 
     <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. Premium <a
-                    href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from
-                BootstrapDash. All rights reserved.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i
-                    class="ti-heart text-danger ml-1"></i></span>
-        </div>
-    </footer>
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023 <a href="#" target="_blank"></a></span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Surpemas - Pagiyanten<i class="text-danger ml-1"></i></span>
+          </div>
+        </footer>
 </div>
 
-<!-- <script>
+<script>
 $('.upprove').click(function() {
     var pengajuanid = $(this).attr('data-id');
     var nama = $(this).attr('data-nama');
     swal({
             title: "Apa kamu yakin ?",
-            text: "Kamu akan setujui penyewaan atas nama " +
+            text: "Kamu akan upprove pengajuan atas nama " +
                 nama +
                 " ",
             icon: "warning",
@@ -122,7 +129,33 @@ $('.upprove').click(function() {
                 swal("Data batal diupprove");
             }
         });
-}); -->
+});
+
+
+$('.reject').click(function() {
+    var rejectid = $(this).attr('data-id');
+    var nama = $(this).attr('data-nama');
+    swal({
+            title: "Apa kamu yakin ?",
+            text: "Kamu akan tolak pengajuan atas nama " +
+                nama +
+                " ",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willUpprove) => {
+            if (willUpprove) {
+                window.location = "/reject/" +
+                    rejectid + ""
+                swal("Data berhasil ditolak", {
+                    icon: "success",
+                });
+            } else {
+                swal("Data batal ditolak");
+            }
+        });
+});
 
 
 </script>

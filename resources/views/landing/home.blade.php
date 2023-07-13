@@ -7,7 +7,7 @@
     <div class="container">
         <div class="section-title" data-aos="fade-up">
             <br>
-            <h2>About</h2>
+            <h2>Tentang</h2>
             <p>Website ini dibuat untuk digunakan oleh warga Desa Pagiyanten guna mempermudah pembuatan surat pelayanan
                 masyarakat yang dibutuhkan. Website ini dibuat oleh mahasiswa Politeknik Harapan Bersama Kota Tegal guna
                 menyelesaikan salah satu syarat kelulusan yaitu skripsi. Website ini sepenuhnya sudah dipegang oleh
@@ -19,13 +19,11 @@
 <hr>
 <section id="services" class="services">
     <div class="container">
-
         <div class="section-title" data-aos="fade-up">
-            <h2>Services</h2>
+            <h3>Pelayanan</h3>
             <p>Dibawah ini contoh surat yang anda bisa buat di Website ini. Pastikan NIK anda sudah terdaftar agar anda
                 bisa membuat surat melalui website. jika belum silahkan <a href="#contact">Hubungi Admin.</a></p>
         </div>
-
         <div class="row" >
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
                 <div class="icon-box icon-box-pink">
@@ -75,14 +73,14 @@
     <div class="container">
         <div class="section-title" data-aos="fade-up">
             <br>
-            <h2>Tracking Surat Anda Disini</h2></br>
+            <h2>Cek Surat Anda Disini</h2></br>
                 <div class="row">
-                    <div class="col-6">
-                        <form action="/penyo" method="post">
+                    <div class="col" style="padding-left: 25%; padding-right: 25%;">
+                        <form action="/checking" method="post">
                             @csrf
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" placeholder="Masukan NIK" name="nik" aria-label="Recipient's username" aria-describedby="button-addon2" required>
-                                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Checking</button>
+                                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Cek Surat</button>
                               </div>
                         </form>
                     </div>
@@ -94,37 +92,39 @@
                 <table class="table">
                     <thead>
                         <tr>
+                            <th>#</th>
                             <th>NIK</th>
                             <th>Nama</th>
                             <th>Jenis Surat</th>
-                            <!-- <th>Nomor Surat</th> -->
                             <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
+                    @foreach($penduduk as $key => $data)
                         <tr>
-                            <td>{{ $penduduk[0]->nik }}</td>
-                            <td>{{ $penduduk[0]->nama_lengkap }}</td>
-                            <td>{{ $penduduk[0]->jenis_surat }}</td>
-                            <!-- <td>{{ $penduduk[0]->nomor_surat }}</td> -->
+                            <td>{{ $key + 1 }}</td>
+                            <td>{{ $data->nik }}</td>
+                            <td>{{ $data->nama_lengkap }}</td>
+                            <td>{{ $data->jenis_surat }}</td>
                             <td>
-                                @if($penduduk[0]->status === NULL)
-                                    Menunggu Konfirmasi
-                                @elseif($penduduk[0]->status === 1)
-                                    Pengajuan Di Tolak
+                                @if($data->status === NULL)
+                                <span class="badge bg-warning">Menunggu Persetujuan</span>
+                                @elseif($data->status === 1)
+                                <span class="badge bg-danger">Pengajuan Ditolak</span>
                                 @else
-                                    Pengajuan Disetujui
+                                <span class="badge bg-success">Pengajuan Disetujui</span>
                                 @endif
                             </td>
                             <td>
-                                @if($penduduk[0]->status == 2)
-                                    <a href="convert/{{$penduduk[0]->id_pengajuan}}" class="btn btn-success p-2"><i class="bi bi-printer"></i></a>
+                                @if($data->status == 2)
+                                    <a href="convert/{{$data->id_pengajuan}}" class="btn btn-success p-2"><i class="bi bi-printer"></i></a>
                                 @else
                                     <a class="btn btn-secondary p-2"><i class="bi bi-print"></i></a>
                                 @endif
                             </td>
                         </tr>
+                     @endforeach
                     </tbody>
                 </table>
                 @elseif(isset($error))

@@ -18,7 +18,7 @@ use App\Http\Controllers\Dashboard\LoginController;
 // Home
 Route::get('/', [LandingController::class, 'index'])->name('Home');
 Route::get('/search-data', [LandingController::class, 'search']);
-Route::post('/penyo', [LandingController::class, 'cariDataByNIK']);
+Route::post('/checking', [LandingController::class, 'cariDataByNIK']);
 
 // Pengajuan
 Route::post('/pengajuan', [PengajuanController::class, 'insertPengajuan']);
@@ -54,6 +54,7 @@ Route::group(['middleware' => ['auth']], function(){
 
     // User
     Route::get('/data-user', [UsersController::class, 'index'])->name('Data User');
+    Route::post('/edit-surat/{id}', [PengajuanDashController::class, 'editNoSurat']);
     Route::get('/form-tambah-user', [UsersController::class, 'formUser']);
     Route::post('/form-tambah-user-add', [UsersController::class, 'store']);
     //admin end

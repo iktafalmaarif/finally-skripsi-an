@@ -126,7 +126,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <div class="mb-3">
-                                            <label for="exampleSelectGender">Janis Pengajuan Surat</label>
+                                            <label for="exampleSelectGender">Jenis Pengajuan Surat</label>
                                             <select class="form-control" name="jenis_surat" id="jenis_surat"
                                                 onchange="showFormSection()" required>
                                                 <option selected disabled value="">-- Pilih Jenis Surat --</option>
@@ -178,13 +178,10 @@
     </div>
 
     <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. Premium <a
-                    href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from
-                BootstrapDash. All rights reserved.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i
-                    class="ti-heart text-danger ml-1"></i></span>
-        </div>
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023 <a href="#" target="_blank"></a></span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Surpemas - Pagiyanten<i class="text-danger ml-1"></i></span>
+          </div>
     </footer>
 </div>
 

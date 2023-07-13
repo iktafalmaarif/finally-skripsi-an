@@ -33,10 +33,8 @@ class LandingController extends Controller
             ->get();
 
         if ($penduduk->isNotEmpty()) {
-            // Data ditemukan, tampilkan dalam tampilan Blade
             return view('landing.home', compact('penduduk'));
         } else {
-            // Data tidak ditemukan, tampilkan pesan error dalam tampilan Blade
             return view('landing.home', ['error' => 'Data tidak ditemukan']);
         }
     }

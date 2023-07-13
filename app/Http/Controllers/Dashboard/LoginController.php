@@ -18,18 +18,17 @@ class LoginController extends Controller
         return view('dashboard.login');
     }
 
-
-    public function login(Request $request){
-
+    public function login(Request $request)
+    {
         $data = [
             'email' => $request->email,
             'password' => $request->password
         ];
-
+    
         if (Auth::attempt($data)) {
             $request->session()->regenerate();
             $user = Auth::user();
-            if ($user->level == 'Admin') {
+            if ($user->level == 'Master Admin' || $user->level == 'Admin') {
                 alert()->success('Berhasil', 'Berhasil Login');
                 return redirect('/dashboard');
             } else {
@@ -41,7 +40,8 @@ class LoginController extends Controller
             Session::flash('error', 'Email atau Password Salah');
             return redirect('/login');
         }
-}
+    }
+    
 
 public function logout(Request $request){
     Auth::logout();

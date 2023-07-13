@@ -23,9 +23,12 @@ return new class extends Migration
             $table->string('kk')->nullable();
             $table->string('keperluan')->nullable();
             $table->string('nama_kampus')->nullable();
-            $table->string('alamat_kampus')->nullable(
-
-            );
+            $table->string('alamat_kampus')->nullable();
+            $table->string('mulai_hajatan')->nullable();
+            $table->string('akhir_hajatan')->nullable();
+            $table->string('tempat_hajatan')->nullable();
+            $table->string('hiburan_hajatan')->nullable();
+            $table->string('keperluan_tambahan')->nullable();
             $table->timestamps();
 
         });
