@@ -163,6 +163,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        'Intervention\Image\ImageServiceProvider',
+
 
         /*
          * Package Service Providers...
@@ -191,7 +193,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // ...
+        'Image' => 'Intervention\Image\Facades\Image',
     ])->toArray(),
 
 ];

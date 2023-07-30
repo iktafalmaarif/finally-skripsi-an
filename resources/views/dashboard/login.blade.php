@@ -5,12 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>SURPEMAS - PAGIYANTEN</title>
-    <link rel="stylesheet" href="assets/vendors/feather/feather.css">
+    <link rel="stylesheet" href="assets/vendors/feather/feather.css"><script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <link rel="stylesheet" href="assets/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="assets/css/vertical-layout-light/style.css">
     <link rel="shortcut icon" href="assets/images/surpemas1.png" />
 </head>
+
+@include('sweetalert::alert')
 
 <body>
     <div class="container-scroller">
@@ -42,7 +45,7 @@
                                 </div><br>
                                 <div class="mt-3">
                                     <button type="submit"
-                                        class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">LOGIN</button>
+                                        class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">MASUK</button>
                                 </div>
                             </form>
                         </div>
@@ -57,8 +60,7 @@
     <script src="assets/js/template.js"></script>
     <script src="assets/js/settings.js"></script>
     <script src="assets/js/todolist.js"></script>
-
-    @include('sweetalert::alert')
+   
 </body>
 
 </html>

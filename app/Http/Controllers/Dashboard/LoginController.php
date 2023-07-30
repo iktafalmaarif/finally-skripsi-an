@@ -38,6 +38,7 @@ class LoginController extends Controller
             }
         } else {
             Session::flash('error', 'Email atau Password Salah');
+            alert()->success('Berhasil', 'Data Penduduk Berhasil ditambahkan');
             return redirect('/login');
         }
     }

@@ -64,7 +64,7 @@ div.WordSection1
 <div class=WordSection1>
 
 <p class=MsoHeader align=center style='margin-left:pt;text-align:center'><img
-width=83 height=100 src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Shield_of_Tegal_Regency.svg/242px-Shield_of_Tegal_Regency.svg.png"
+width=83 height=100 src="{{$logo}}"
 align=left hspace=12><span style='font-size:20.0pt;font-family:"Times New Roman",serif'>PEMERINTAH
 KABUPATEN TEGAL</span></p>
 
@@ -109,7 +109,7 @@ font-family:"Bookman Old Style",serif'>KETERANGAN IJIN HAJATAN</span></u></b></p
 <p class=MsoNormal align=center style='text-align:center;line-height:150%'><span
 style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>No</span><span
 lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>mor
-: 470 / 04 / 014 / VI / 2023</span></p>
+: {{$data->nomor_surat}}</span></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:150%'><span
 lang=IN style='font-size:8.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>&nbsp;</span></p>
@@ -124,21 +124,21 @@ lang=IN style='font-size:8.0pt;line-height:150%;font-family:"Bookman Old Style",
 <p class=MsoNormal style='margin-left:21.3pt;text-align:justify;line-height:
 150%'><span style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>Nama
                         : </span><span lang=IN style='font-size:11.0pt;
-line-height:150%;font-family:"Bookman Old Style",serif'>AMRUN</span></p>
+line-height:150%;font-family:"Bookman Old Style",serif'>{{$data->nama_lengkap}}</span></p>
 
 <p class=MsoNormal style='margin-left:21.3pt;text-align:justify;line-height:
 150%'><span style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>Tempat
 / Tgl Lahir     : </span><span lang=IN style='font-size:11.0pt;line-height:
-150%;font-family:"Bookman Old Style",serif'>Tegal, 01 Desember 1968</span></p>
+150%;font-family:"Bookman Old Style",serif'>{{$data->tempat_lahir}}, {{$data->tanggal_lahir}}</span></p>
 
 <p class=MsoNormal style='margin-left:21.3pt;text-align:justify;line-height:
 150%'><span style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>Jenis
 Kelamin            : </span><span lang=IN style='font-size:11.0pt;line-height:
-150%;font-family:"Bookman Old Style",serif'>Laki-laki</span></p>
+150%;font-family:"Bookman Old Style",serif'>{{$data->jenis_kelamin}}</span></p>
 
 <p class=MsoNormal style='margin-left:21.3pt;text-align:justify;line-height:
 150%'><span lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>Alamat                      :
-Desa Pagiyanten RT 018 RW 005</span></p>
+Desa Pagiyanten</span></p>
 
 <p class=MsoNormal style='margin-left:21.3pt;text-align:justify;line-height:
 150%'><span lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>                                  
@@ -146,43 +146,43 @@ Kecamatan Adiwerna Kabupaten Tegal</span></p>
 
 <p class=MsoNormal style='margin-left:21.3pt;text-align:justify;line-height:
 150%'><span lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>Surat
-Bukti Diri         : No. NIK      : 3328110112680012</span></p>
+Bukti Diri         : No. NIK      : {{$data->nik}}</span></p>
 
 <p class=MsoNormal style='margin-left:21.3pt;text-align:justify;line-height:
 150%'><span style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>Agama                       :
-</span><span lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>Islam</span></p>
+</span><span lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>{{$data->agama}}</span></p>
 
 <p class=MsoNormal style='margin-left:21.3pt;text-align:justify;line-height:
 150%'><span style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>Pekerjaan
         </span><span lang=IN style='font-size:11.0pt;line-height:150%;
 font-family:"Bookman Old Style",serif'>          </span><span style='font-size:
 11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>: </span><span
-lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>Sopir</span></p>
+lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>{{$data->pekerjaan}}</span></p>
 
 <p class=MsoNormal style='margin-left:21.3pt;text-align:justify;line-height:
 150%'><span lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>Kewarganegaraan     :
-Indonesia</span></p>
+{{$data->kewarganegaraan}}</span></p>
 
 <p class=MsoNormal style='margin-top:0in;margin-right:-13.85pt;margin-bottom:
 0in;margin-left:21.3pt;margin-bottom:.0001pt;text-align:justify;line-height:
 150%'><span lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>Keperluan                 :
-Permohonan Ijin Hajatan untuk Menikahkan Anaknya</span></p>
+Permohonan Ijin Hajatan</span></p>
 
 <p class=MsoNormal style='margin-left:21.3pt;text-align:justify;line-height:
 150%'><span lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>                                  
-Hari           : Sabtu - Senin</span></p>
+Tanggal Mulai          : {{$data->mulai_hajatan}} </span></p>
 
 <p class=MsoNormal style='margin-left:21.3pt;text-align:justify;line-height:
 150%'><span lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>                                  
-Tanggal      : 17 – 19 Juni 2023</span></p>
+Tanggal Berakhir     : {{$data->akhir_hajatan}}</span></p>
 
 <p class=MsoNormal style='margin-left:21.3pt;text-align:justify;line-height:
 150%'><span lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>                                  
-Tempat      : Area Rumah</span></p>
+Tempat                     : {{$data->tempat_hajatan}}</span></p>
 
 <p class=MsoNormal style='margin-left:21.3pt;text-align:justify;line-height:
 150%'><span lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>                                  
-Hiburan     : Musik Gambus</span></p>
+Hiburan                     : {{$data->hiburan_hajatan}}</span></p>
 
 <p class=MsoNormal style='margin-left:21.3pt;text-align:justify;line-height:
 150%'><span lang=IN style='font-size:8.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>&nbsp;</span></p>
@@ -196,11 +196,11 @@ sebagaimana mestinya.</span></p>
 lang=IN style='font-size:8.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>&nbsp;</span></p>
 
 <p class=MsoNormal style='margin-left:3.5in;text-align:justify;line-height:
-150%'><span lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>             
-   Pagiyanten, 15 Juni 2023</span></p>
+150%'><span lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>                      
+   Pagiyanten, {{ date('d') }} {{ date('M') }} {{ date('Y') }}</span></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:150%'><span
-lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>                                                                                       Pemohon</span></p>
+lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>                                                                                                                 Kepala Desa </span></p>
 
 <p class=MsoNormal style='margin-left:4.0in;text-align:justify;text-indent:
 .5in;line-height:150%'><span lang=IN style='font-size:11.0pt;line-height:150%;
@@ -211,28 +211,14 @@ font-family:"Bookman Old Style",serif'>&nbsp;</span></p>
 
 <p class=MsoNormal style='margin-left:4.0in;text-indent:.5in;line-height:150%'><b><span
 lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>    
-     AMRUN</span></b></p>
+     S E G E R</span></b></p>
 
 <p class=MsoNormal align=center style='margin-left:290.6pt;text-align:center;
 line-height:150%'><span lang=IN style='font-size:8.0pt;line-height:150%;
 font-family:"Bookman Old Style",serif'>&nbsp;</span></p>
 
 <p class=MsoNormal align=center style='text-align:center;line-height:150%'><span
-lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>Mengetahui</span></p>
-
-<p class=MsoNormal align=center style='text-align:center;line-height:150%'><span
 lang=IN style='font-size:8.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-indent:.5in;line-height:150%'><span lang=IN
-style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>Kepala
-Desa Pagiyanten                                          Ketua RT 018                                      </span></p>
-
-<p class=MsoNormal style='text-indent:.5in;line-height:150%'><span lang=IN
-style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;line-height:150%'><b><span
-lang=IN style='font-size:11.0pt;line-height:150%;font-family:"Bookman Old Style",serif'>S
-E G E R                                                      SUSWANDI</span></b></p>
 
 </div>
 

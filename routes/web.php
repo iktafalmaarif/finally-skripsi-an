@@ -17,7 +17,7 @@ use App\Http\Controllers\Dashboard\LoginController;
 
 // Home
 Route::get('/', [LandingController::class, 'index'])->name('Home');
-Route::get('/search-data', [LandingController::class, 'search']);
+Route::post('/search-data', [LandingController::class, 'search']);
 Route::post('/checking', [LandingController::class, 'cariDataByNIK']);
 
 // Pengajuan
@@ -33,7 +33,7 @@ Route::get('/tracking-surat', [TrackingController::class, 'tracking']);
 Route::get('/login', [LoginController::class, 'index'])->name('login.index');
 Route::post('/action-login', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-
+Route::get('/convert/{id_pengajuan}', [PengajuanDashController::class, 'convert']);
 
 Route::group(['middleware' => ['auth']], function(){
     //admin
@@ -44,13 +44,14 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/cari-data', [PengajuanDashController::class, 'search']);
     Route::get('/approve/{id_pengajuan}', [PengajuanDashController::class, 'approve']);
     Route::get('/reject/{id_pengajuan}', [PengajuanDashController::class, 'reject']);
-    Route::get('/convert/{id_pengajuan}', [PengajuanDashController::class, 'convert']);
-
+    
     //Penduduk Page
     Route::get('/data-penduduk', [PendudukController::class, 'index'])->name('Data Penduduk');
     Route::get('/form-penduduk', [PendudukController::class, 'formPenduduk']);
     Route::post('/insert-penduduk', [PendudukController::class, 'store']);
-    Route::get('/edit-penduduk', [PendudukController::class, 'edit'])->name('penduduk.edit');
+    Route::get('/edit-penduduk/{id}', [PendudukController::class, 'edit']);
+    Route::post('/update/{id}', [PendudukController::class, 'update']);
+    Route::get('/delete-penduduk/{id}', [PendudukController::class, 'destroy']);
 
     // User
     Route::get('/data-user', [UsersController::class, 'index'])->name('Data User');

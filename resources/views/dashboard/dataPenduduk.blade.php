@@ -42,8 +42,8 @@
                                             <td>{{$data->status_perkawinan}}</td>
                                             <td>{{$data->alamat}}</td>
                                             <td>
-                                                <a href="{{ route('penduduk.edit', ['id_penduduk' => $data->id_penduduk])}}" class="btn btn-warning p-2" ><i class="fa-solid fa-pen-to-square"></i></a>
-                                                <button class="btn btn-danger p-2" ><i class="fa-solid fa-trash"></i></button>
+                                                <a href="/edit-penduduk/{{$data->id_penduduk}}" class="btn btn-warning p-2" ><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <a class="btn btn-danger destroy p-2" data-id="{{$data->id_penduduk}}" data-nama="{{$data->nama_lengkap}}" ><i class="fa-solid fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -65,4 +65,32 @@
           </div>
         </footer>
 </div>
+
+<script>
+$('.destroy').click(function() {
+    var pendudukid = $(this).attr('data-id');
+    var nama = $(this).attr('data-nama');
+    swal({
+            title: "Apa kamu yakin ?",
+            text: "Kamu akan hapus data atas nama " +
+                nama +
+                " ",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willUpprove) => {
+            if (willUpprove) {
+                window.location = "/delete-penduduk/" +
+                    pendudukid + ""
+                swal("Data berhasil hapus", {
+                    icon: "success",
+                });
+            } else {
+                swal("Data batal dihapus");
+            }
+        });
+});
+
+</script>
 @endsection

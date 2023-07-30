@@ -66,7 +66,7 @@ div.WordSection1
 <div class=WordSection1>
 
 <p class=MsoHeader align=center style='margin-left:pt;text-align:center'><img
-width=83 height=100 src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Shield_of_Tegal_Regency.svg/242px-Shield_of_Tegal_Regency.svg.png"
+width=83 height=100 src="{{$logo}}"
 align=left hspace=12><span style='font-size:20.0pt;font-family:"Times New Roman",serif'>PEMERINTAH
 KABUPATEN TEGAL</span></p>
 
@@ -195,10 +195,10 @@ lang=IN style='font-family:"Bookman Old Style",serif'>&nbsp;</span></p>
 11 April 2023</span></p>
 
 <p class=MsoNormal style='margin-left:.5in;text-align:justify;text-indent:.5in;
-line-height:150%'><span lang=IN style='font-family:"Bookman Old Style",serif'>Mengetahui                                                 </span></p>
+line-height:150%'><span lang=IN style='font-family:"Bookman Old Style",serif'>      Mengetahui                                                 </span></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:150%'><span
-lang=IN style='font-family:"Bookman Old Style",serif'>Kepala Desa Pagiyanten                                        Yang
+lang=IN style='font-family:"Bookman Old Style",serif'>       Kepala Desa Pagiyanten                                             Yang
 Menyatakan</span></p>
 
 <p class=MsoNormal style='margin-left:311.85pt;text-align:justify;line-height:
@@ -211,8 +211,7 @@ lang=IN style='font-family:"Bookman Old Style",serif'>&nbsp;</span></p>
 lang=IN style='font-family:"Bookman Old Style",serif'>&nbsp;</span></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:.5in'><b><span
-lang=IN style='font-family:"Bookman Old Style",serif'>        S E G E R                                           ANIZAH
-KUSUMANINGRUM</span></b></p>
+lang=IN style='font-family:"Bookman Old Style",serif'>               S E G E R                                                                {{$data->nama_lengkap}}</span></b></p>
 
 <p class=MsoNormal style='margin-left:.5in;text-align:justify'><b><span
 lang=IN style='font-family:"Bookman Old Style",serif'>&nbsp;</span></b></p>

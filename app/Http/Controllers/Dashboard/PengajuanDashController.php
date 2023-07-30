@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Penduduk;
 use App\Models\Pengajuan;
 use Illuminate\Http\Request;
+use Dompdf\Dompdf;
 use Illuminate\Support\Facades\DB;
+use Intervention\Image\Facades\Image;
 use PDF;
 
 class PengajuanDashController extends Controller
@@ -71,39 +73,92 @@ class PengajuanDashController extends Controller
         return redirect()->route('Daftar Pengajuan')->with('warning', 'Data Ditolak');
     }
 
+    // public function convert($id)
+    // {
+    //     $data = DB::table('pengajuans')
+    //         ->join('penduduks', 'pengajuans.id_penduduk', '=', 'penduduks.id_penduduk')
+    //         ->where('pengajuans.id_pengajuan', $id)
+    //         ->first();
+
+    //     $jenis = $data->jenis_surat;
+    //     $namaPengaju = $data->nama_lengkap;
+
+    //     if ($jenis == 'Surat Keterangan Tidak Mampu') {
+    //         $pdf = PDF::loadView('letter.SKTM', ['data' => $data]);
+    //     } elseif ($jenis == 'Surat Bidikmisi Universitas') {
+    //         $pdf = PDF::loadView('letter.SKTMBIDIKMISIUNIVERSITAS', ['data' => $data]);
+    //     } elseif ($jenis == 'Surat Izin Hajatan') {
+    //         $pdf = PDF::loadView('letter.SURATKETERANGANIJINHAJATAN', ['data' => $data]);
+    //     } elseif ($jenis == 'Surat Keterangan Belum Menikah') {
+    //         $pdf = PDF::loadView('letter.SURATKETERANGANBELUMMENIKAH', ['data' => $data]);
+    //     } elseif ($jenis == 'Surat Keterangan Domisili') {
+    //         $pdf = PDF::loadView('letter.SURATKETERANGANDOMISILI', ['data' => $data]);
+    //     } elseif ($jenis == 'Surat Keterangan Belum Memiliki Rumah') {
+    //         $pdf = PDF::loadView('letter.SURATKETERANGANBELUMMEMILIKIRUMAH', ['data' => $data]);
+    //     } elseif ($jenis == 'Surat Keterangan Tinggal Bersama Orang Tua') {
+    //         $pdf = PDF::loadView('letter.SURATKETERANGANTINGGALBERSAMAORTU', ['data' => $data]);
+    //     } elseif ($jenis == 'Surat Keterangan Usaha') {
+    //         $pdf = PDF::loadView('letter.SURATKETERANGANUSAHA', ['data' => $data]);
+    //     } elseif ($jenis == 'Surat Keterangan Harga Tanah') {
+    //         $pdf = PDF::loadView('letter.SURATKETERANGANHARGATANAH', ['data' => $data]);
+    //     }
+
+    //     $namaFile = $jenis.'-'.$namaPengaju;
+    //     $pdf->setPaper('F4');
+
+    //     return $pdf->stream($namaFile.'.pdf');
+    // }
+
+
+
     public function convert($id)
     {
         $data = DB::table('pengajuans')
             ->join('penduduks', 'pengajuans.id_penduduk', '=', 'penduduks.id_penduduk')
             ->where('pengajuans.id_pengajuan', $id)
             ->first();
-
+    
         $jenis = $data->jenis_surat;
         $namaPengaju = $data->nama_lengkap;
+    
+        $dompdf = new Dompdf();
 
+        $logoPath = public_path('assets/images/logo-kab.png');
+        $logo = Image::make($logoPath)->encode('data-url')->encoded;
+    
         if ($jenis == 'Surat Keterangan Tidak Mampu') {
-            $pdf = PDF::loadView('letter.SKTM', ['data' => $data]);
+            $html = view('letter.SKTM', ['data' => $data],compact('logo'))->render();
         } elseif ($jenis == 'Surat Bidikmisi Universitas') {
-            $pdf = PDF::loadView('letter.SKTMBIDIKMISIUNIVERSITAS', ['data' => $data]);
+            $html = view('letter.SKTMBIDIKMISIUNIVERSITAS', ['data' => $data],compact('logo'))->render();
         } elseif ($jenis == 'Surat Izin Hajatan') {
-            $pdf = PDF::loadView('letter.SURATKETERANGANIJINHAJATAN', ['data' => $data]);
+            $html = view('letter.SURATKETERANGANIJINHAJATAN', ['data' => $data],compact('logo'))->render();
         } elseif ($jenis == 'Surat Keterangan Belum Menikah') {
-            $pdf = PDF::loadView('letter.SURATKETERANGANBELUMMENIKAH', ['data' => $data]);
+            $html = view('letter.SURATKETERANGANBELUMMENIKAH', ['data' => $data],compact('logo'))->render();
         } elseif ($jenis == 'Surat Keterangan Domisili') {
-            $pdf = PDF::loadView('letter.SURATKETERANGANDOMISILI', ['data' => $data]);
+            $html = view('letter.SURATKETERANGANDOMISILI', ['data' => $data],compact('logo'))->render();
         } elseif ($jenis == 'Surat Keterangan Belum Memiliki Rumah') {
-            $pdf = PDF::loadView('letter.SURATKETERANGANBELUMMEMILIKIRUMAH', ['data' => $data]);
-        } elseif ($jenis == 'Surat Keterangan Belum Memiliki Rumah') {
-            $pdf = PDF::loadView('letter.SURATKETERANGANTINGGALBERSAMAORTU', ['data' => $data]);
+            $html = view('letter.SURATKETERANGANBELUMMEMILIKIRUMAH', ['data' => $data],compact('logo'))->render();
+        } elseif ($jenis == 'Surat Keterangan Tinggal Bersama Orang Tua') {
+            $html = view('letter.SURATKETERANGANTINGGALBERSAMAORTU', ['data' => $data],compact('logo'))->render();
         } elseif ($jenis == 'Surat Keterangan Usaha') {
-            $pdf = PDF::loadView('letter.SURATKETERANGANUSAHA', ['data' => $data]);
+            $html = view('letter.SURATKETERANGANUSAHA', ['data' => $data],compact('logo'))->render();
         } elseif ($jenis == 'Surat Keterangan Harga Tanah') {
-            $pdf = PDF::loadView('letter.SURATKETERANGANHARGATANAH', ['data' => $data]);
+            $html = view('letter.SURATKETERANGANHARGATANAH', ['data' => $data],compact('logo'))->render();
         }
+    
+        $namaFile = $jenis . '-' . $namaPengaju;
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('F4');
+    
+        
+        // Render the PDF
+        $dompdf->render();
+    
+        // Stream the PDF to the browser
+        return $dompdf->stream($namaFile . '.pdf');
 
-        $namaFile = $jenis.'-'.$namaPengaju;
-        $pdf->setPaper('F4');
-
-        return $pdf->stream($namaFile.'.pdf');
+        
     }
+    
+
 }

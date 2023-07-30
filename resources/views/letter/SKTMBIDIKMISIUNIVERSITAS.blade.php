@@ -60,7 +60,7 @@ div.WordSection1
 <div class=WordSection1>
 
 <p class=MsoHeader align=center style='margin-left:pt;text-align:center'><img
-width=83 height=100 src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Shield_of_Tegal_Regency.svg/242px-Shield_of_Tegal_Regency.svg.png"
+width=83 height=100 src="{{$logo}}"
 align=left hspace=12><span style='font-size:20.0pt;font-family:"Times New Roman",serif'>PEMERINTAH
 KABUPATEN TEGAL</span></p>
 
@@ -103,7 +103,7 @@ lang=IN><span style='text-decoration:none'>&nbsp;</span></span></u></b></p>
 lang=IN style='font-size:16.0pt;line-height:150%'>SURAT KETERANGAN TIDAK MAMPU BIDIKMISI</span></u></b></p>
 
 <p class=MsoNormal align=center style='text-align:center;line-height:150%'><span
-lang=IN>Nomor : 471 / 04 / SKTM / 012 / II / 2023    </span></p>
+lang=IN>Nomor : {{$data->nomor_surat}}    </span></p>
 
 <p class=MsoNormal align=center style='text-align:center;line-height:150%'><span
 lang=IN>&nbsp;</span></p>
@@ -119,16 +119,15 @@ style='font-family:"Bookman Old Style",serif'>{{$data->nama_lengkap}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
-lang=IN>Tempat, Tanggal Lahir           : Tegal, 29 Juli 2004</span></p>
+lang=IN>Tempat, Tanggal Lahir           : {{$data->tempat_lahir}}, {{$data->tanggal_lahir}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
-lang=IN>Jenis Kelamin                          : Perempuan</span></p>
+lang=IN>Jenis Kelamin                          : {{$data->jenis_kelamin}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
-lang=IN>Alamat                                     : Desa Pagiyanten RT 006 /
-RW 001</span></p>
+lang=IN>Alamat                                     : Desa Pagiyanten</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
@@ -138,24 +137,24 @@ Kabupaten Tegal</span></p>
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
 lang=IN>Surat Bukti Diri                       : NIK               :
-3328116907040002</span></p>
+{{$data->nik}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
-lang=IN>                                                  No. KK         :
-3328112402082838</span></p>
+lang=IN>                                                  No. KK          :
+{{$data->no_kk}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
-lang=IN>Kewarganegaraan                    : Indonesia</span></p>
+lang=IN>Kewarganegaraan                    : {{$data->kewarganegaraan}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
-lang=IN>Agama                                     : Islam</span></p>
+lang=IN>Agama                                     : {{$data->agama}}</span></p>
 
 <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
 margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;line-height:150%'><span
-lang=IN>Pekerjaan                                 : Pelajar</span></p>
+lang=IN>Pekerjaan                                 : {{$data->pekerjaan}}</span></p>
 
 <p class=MsoNormal style='text-align:justify;line-height:150%'><span lang=IN>&nbsp;</span></p>
 
@@ -164,27 +163,22 @@ lang=IN>Pekerjaan                               �
 digunakan untuk keperluan <b>PENDAFTARAN BEASISWA BIDIKMISI UNIVERSITAS :</b></span></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
-150%'><span lang=IN>Nama Universitas                    : Universitas Islam
-Negeri (UIN) Walisongo Semarang</span></p>
+150%'><span lang=IN>Nama Universitas                    : {{$data->nama_kampus}}</span></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
-150%'><span lang=IN>Alamat Universitas                  : Jl. Walisongo No.3-5,
-Tambakaji, Kecamatan Ngaliyan</span></p>
-
-<p class=MsoNormal style='margin-left:2.0in;text-align:justify;text-indent:
-.5in;line-height:150%'><span lang=IN>  Kota Semarang, Jawa Tengah 50185</span></p>
+150%'><span lang=IN>Alamat Universitas                  : {{$data->alamat_kampus}}</span></p>
 
 <p class=MsoNormal style='margin-left:2.0in;text-align:justify;text-indent:
 .5in;line-height:150%'><span lang=IN>&nbsp;</span></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:150%'><span
 lang=IN>Demikian Surat Keterangan ini Kami buat dengan sebenarnya dan untuk
-dapat dipergunakan sebagamana mestinya.</span></p>
+dapat dipergunakan sebagaimana mestinya.</span></p>
 
 <p class=MsoNormal style='text-align:justify;line-height:150%'><span lang=IN>&nbsp;</span></p>
 
 <p class=MsoNormal style='margin-left:318.95pt;text-align:justify;line-height:
-150%'><span lang=IN>Pagiyanten, 20 Febuari 2023</span></p>
+150%'><span lang=IN>Pagiyanten, {{ date('d') }} {{ date('M') }} {{ date('Y') }}</span></p>
 
 <p class=MsoNormal style='margin-left:318.95pt;text-align:justify;line-height:
 150%'><span lang=IN>Kepala Desa Pagiyanten</span></p>

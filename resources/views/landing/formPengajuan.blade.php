@@ -117,13 +117,13 @@
             <div class="col-6">
                 <div class="mb-3">
                      <label class="form-label">Foto KTP</label>
-                     <input type="file" name="ktp" class="form-control">
+                     <input type="file" name="ktp"  accept="image/png, image/jpeg, application/pdf" class="form-control">
                 </div>
              </div>
          <div class="col-6">
             <div class="mb-3">
                 <label class="form-label">Foto KK</label>
-                <input type="file" name="kk" class="form-control">
+                <input type="file" name="kk" accept="image/png, image/jpeg, application/pdf" class="form-control">
             </div>
         </div>
     </div>
@@ -134,13 +134,13 @@
                         <div class="col-6">
                             <div class="mb-3">
                                 <label class="form-label">Nama Kampus</label>
-                                <input type="text" name="nama_kampus" class="form-control" placeholder="Nama Kampus">
+                                <input type="text" id="nama_kampus" name="nama_kampus" class="form-control" placeholder="Nama Kampus">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="mb-3">
                                 <label class="form-label">Alamat Kampus</label>
-                                <input type="text" name="alamat_kampus" class="form-control" placeholder="Alamat Kampus" >
+                                <input type="text" id="alamat_kampus" name="alamat_kampus" class="form-control" placeholder="Alamat Kampus" >
                             </div>
                         </div>
                     </div>
@@ -148,7 +148,7 @@
             </div>
 
             <div id="domisili_section" style="display: none;">
-                <div class="row">
+                <div class="row">   
                     <div class="col">
                             <div class="mb-3">
                                 <label class="form-label">Keperluan</label>
@@ -211,11 +211,18 @@
             </div>
 
             <div id="usaha_section" style="display: none;">
+                <div class="row">   
+                    <div class="col">
+                        <div class="mb-3">
+                            <label class="form-label">Keperluan</label>
+                            <input type="text" name="keperluan" class="form-control" placeholder="Keperluan">
+                        </div>
+                    </div>
+                </div>
             </div>
-
+            
             <div id="hargaTanah_section" style="display: none;">
             </div>
-
         </div>
     </div>
 
@@ -223,16 +230,69 @@
 
 </form>
 
-
 <script>
     window.onload = function() {
         var idPenduduk = "{{ $user->id_penduduk ?? '' }}";
         var jenisSuratSelect = document.getElementById("jenis_surat");
         var buttonAjukan = document.getElementById("btn_ajukan");
+        var fotoKtp = document.querySelector('input[name="ktp"]');
+        var fotoKk = document.querySelector('input[name="kk"]');
+        var keperluan = document.querySelector('input[name="keperluan"]');
+        var namaKampus = document.getElementById("nama_kampus");
+        var alamatKampus = document.getElementById("alamat_kampus");
+        var mulaiHajatan = document.querySelector('input[name="mulai_hajatan"]');
+        var akhirHajatan = document.querySelector('input[name="akhir_hajatan"]');
+        var tempatHajatan = document.querySelector('input[name="tempat_hajatan"]');
+        var hiburanHajatan = document.querySelector('input[name="hiburan_hajatan"]');
+        var keperluanTambahan = document.querySelector('input[name="keperluan_tambahan"]');
 
         if (idPenduduk === '') {
             jenisSuratSelect.disabled = true;
             buttonAjukan.disabled = true;
+        }
+
+        jenisSuratSelect.addEventListener('change', checkFormInputs);
+        fotoKtp.addEventListener('change', checkFormInputs);
+        fotoKk.addEventListener('change', checkFormInputs);
+        keperluan.addEventListener('input', checkFormInputs);
+        namaKampus.addEventListener('input', checkFormInputs);
+        alamatKampus.addEventListener('input', checkFormInputs);
+        mulaiHajatan.addEventListener('input', checkFormInputs);
+        akhirHajatan.addEventListener('input', checkFormInputs);
+        tempatHajatan.addEventListener('input', checkFormInputs);
+        hiburanHajatan.addEventListener('input', checkFormInputs);
+        keperluanTambahan.addEventListener('input', checkFormInputs);
+
+        function checkFormInputs() {
+            const selectedOption = jenisSuratSelect.value;
+            let isFormValid = true;
+
+            if (selectedOption === "Surat Keterangan Tidak Mampu") {
+                isFormValid = keperluan.value.trim() !== '';
+            } else if (selectedOption === "Surat Bidikmisi Universitas") {
+                isFormValid = namaKampus.value.trim() !== '' && alamatKampus.value.trim() !== '';
+            } else if (selectedOption === "Surat Izin Hajatan") {
+                isFormValid = mulaiHajatan.value.trim() !== '' && akhirHajatan.value.trim() !== '' && tempatHajatan.value.trim() !== '' && hiburanHajatan.value.trim() !== '';
+            } else if (selectedOption === "Surat Keterangan Belum Menikah") {
+                // Additional validation for this option can be added if necessary
+            } else if (selectedOption === "Surat Keterangan Belum Memiliki Rumah") {
+                isFormValid = keperluanTambahan.value.trim() !== '';
+            } else if (selectedOption === "Surat Keterangan Tinggal Bersama Orang Tua") {
+                // Additional validation for this option can be added if necessary
+            } else if (selectedOption === "Surat Keterangan Usaha") {
+                // Additional validation for this option can be added if necessary
+            } else if (selectedOption === "Surat Keterangan Harga Tanah") {
+                // Additional validation for this option can be added if necessary
+            } else {
+                // If none of the options match, disable the button
+                isFormValid = false;
+            }
+
+            if (isFormValid && fotoKtp.files.length > 0 && fotoKk.files.length > 0) {
+                buttonAjukan.disabled = false;
+            } else {
+                buttonAjukan.disabled = true;
+            }
         }
     };
 </script>
@@ -254,7 +314,6 @@
             var usahaSection = document.getElementById("usaha_section");
             var hargaTanahSection = document.getElementById("hargaTanah_section");
 
-
             domisiliSection.style.display = "none";
             bidikmisiSection.style.display = "none";
             hajatanSection.style.display = "none";
@@ -267,22 +326,44 @@
             if (selectedOption === "Surat Keterangan Tidak Mampu") {
                 domisiliSection.style.display = "block";
             } else if (selectedOption === "Surat Bidikmisi Universitas") {
-                bidikmisiSection.style.display = "block"
+                bidikmisiSection.style.display = "block";
             } else if (selectedOption === "Surat Izin Hajatan") {
-                hajatanSection.style.display = "block"
+                hajatanSection.style.display = "block";
             } else if (selectedOption === "Surat Keterangan Belum Menikah") {
-                belumMenikahSection.style.display = "block"
+                belumMenikahSection.style.display = "block";
             } else if (selectedOption === "Surat Keterangan Belum Memiliki Rumah") {
-                belumMemilikiRumahSection.style.display = "block"
+                belumMemilikiRumahSection.style.display = "block";
             } else if (selectedOption === "Surat Keterangan Tinggal Bersama Orang Tua") {
-                tinggalBersamaSection.style.display = "block"
+                tinggalBersamaSection.style.display = "block";
             } else if (selectedOption === "Surat Keterangan Usaha") {
-                usahaSection.style.display = "block"
+                usahaSection.style.display = "block";
             } else if (selectedOption === "Surat Keterangan Harga Tanah") {
-                hargaTanahSection.style.display = "block"
+                hargaTanahSection.style.display = "block";
             }
 
-            formSection.style.display = (selectedOption !== "") ? "block" : "none";
+            formSection.style.display = selectedOption !== "" ? "block" : "none";
         }
     });
 </script>
+
+<script>
+    // Get the select element and the "AJUKAN SURAT" button
+    const jenisSuratSelect = document.getElementById('jenis_surat');
+    const ajukanButton = document.getElementById('btn_ajukan');
+
+    // Function to check if the select has a value selected
+    function checkSelectValue() {
+        if (jenisSuratSelect.value) {
+            ajukanButton.removeAttribute('disabled');
+        } else {
+            ajukanButton.setAttribute('disabled', 'disabled');
+        }
+    }
+
+    // Attach an event listener to the select element
+    jenisSuratSelect.addEventListener('change', checkSelectValue);
+
+    // Initial check when the page loads (in case there's a default value)
+    checkSelectValue();
+</script>
+

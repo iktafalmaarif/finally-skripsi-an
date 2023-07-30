@@ -63,7 +63,7 @@ div.WordSection1
 <div class=WordSection1>
 
 <p class=MsoHeader align=center style='margin-left:;text-align:center'><img
-width=83 height=100 src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Shield_of_Tegal_Regency.svg/242px-Shield_of_Tegal_Regency.svg.png"
+width=83 height=100 src="{{$logo}}"
 align=left hspace=12><span style='font-size:20.0pt;font-family:"Times New Roman",serif'>PEMERINTAH
 KABUPATEN TEGAL</span></p>
 
@@ -178,18 +178,6 @@ benar-benar <b>Keluarga Tidak Mampu/ Miskin</b> dan akan digunakan untuk :</span
 <p class=MsoNormal style='margin-left:1.75in;text-align:justify;text-indent:
 .5in;line-height:150%'><span lang=IN style='font-size:11.0pt;line-height:150%'>
 </span></p>
-
-<p class=MsoNormal style='margin-left:35.45pt;text-align:justify;line-height:
-150%'><span lang=IN style='font-size:11.0pt;line-height:150%'>Keterangan
-Lain-Lain &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Bahwa anak tersebut diatas benar-benar dari</span></p>
-
-<p class=MsoNormal style='margin-left:2.3in;text-align:justify;line-height:
-150%'><span lang=IN style='font-size:11.0pt;line-height:150%'> Keluarga Tidak
-Mampu dan Orang Tuanya Termasuk Penerima</span></p>
-
-<p class=MsoNormal style='margin-left:2.3in;text-align:justify;line-height:
-150%'><span lang=IN style='font-size:11.0pt;line-height:150%'> Bantuan PKH
-&amp; BPNT.</span></p>
 
 <p class=MsoNormal style='text-align:justify;line-height:150%'><span lang=IN
 style='font-size:5.0pt;line-height:150%'>&nbsp;</span></p>

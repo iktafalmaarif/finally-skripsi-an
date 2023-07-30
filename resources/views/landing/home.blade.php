@@ -3,12 +3,12 @@
 @include('sweetalert::alert')
 
 @include('landing.layouts.includes.hero')
-<section id="about" class="about">
+<section id="about" class="about section-bg">
     <div class="container">
         <div class="section-title" data-aos="fade-up">
             <br>
-            <h2>Tentang</h2>
-            <p>Website ini dibuat untuk digunakan oleh warga Desa Pagiyanten guna mempermudah pembuatan surat pelayanan
+            <h2 style="font-weight: bolder;">Tentang</h2>
+            <p style="font-family: 'Raleway', sans-serif;">Website ini dibuat untuk digunakan oleh warga Desa Pagiyanten guna mempermudah pembuatan surat pelayanan
                 masyarakat yang dibutuhkan. Website ini dibuat oleh mahasiswa Politeknik Harapan Bersama Kota Tegal guna
                 menyelesaikan salah satu syarat kelulusan yaitu skripsi. Website ini sepenuhnya sudah dipegang oleh
                 Pemerintah Desa Pagiyanten saat ini.</p>
@@ -17,23 +17,26 @@
     </div>
 </section>
 <hr>
-<section id="services" class="services">
+<section id="services" class="services section-bg">
     <div class="container">
         <div class="section-title" data-aos="fade-up">
-            <h3>Pelayanan</h3>
+            <h2 style="font-weight: bolder;">Pelayanan</h2>
             <p>Dibawah ini contoh surat yang anda bisa buat di Website ini. Pastikan NIK anda sudah terdaftar agar anda
                 bisa membuat surat melalui website. jika belum silahkan <a href="#contact">Hubungi Admin.</a></p>
         </div>
         <div class="row" >
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
-                <div class="icon-box icon-box-pink">
-                    <div class="icon"><i class="bx bx-file"></i></div>
-                    <h4 class="title"><a href="">Surat Keterangan Tidak Mampu</a></h4>
-                    <p class="description">Surat yang digunakan untuk keringanan biaya obat, biaya sekolah, beasiswa,
-                        peralihan bpjs dan lain-lain.</p>
+            <a href="#ajukan">
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
+                    <div class="icon-box icon-box-pink">
+                        <div class="icon"><i class="bx bx-file"></i></div>
+                        <h4 class="title"><a href="#ajukan">Surat Keterangan Tidak Mampu</a></h4>
+                        <p class="description">Surat yang digunakan untuk keringanan biaya obat, biaya sekolah, beasiswa,
+                            peralihan bpjs dan lain-lain.</p>
+                    </div>
                 </div>
-            </div>
+            </a>
 
+            
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
                 data-aos-delay="100">
                 <div class="icon-box icon-box-cyan">
@@ -69,17 +72,17 @@
     </div>
 </section>
 <hr>
-<section id="checking" class="tracking">
+<section id="checking" class="checking section-bg">
     <div class="container">
         <div class="section-title" data-aos="fade-up">
             <br>
-            <h2>Cek Surat Anda Disini</h2></br>
+            <h2 style="font-weight: bolder;">Cek Surat Anda Disini</h2></br>
                 <div class="row">
                     <div class="col" style="padding-left: 25%; padding-right: 25%;">
-                        <form action="/checking" method="post">
+                        <form action="/checking#checking" method="post">
                             @csrf
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Masukan NIK" name="nik" aria-label="Recipient's username" aria-describedby="button-addon2" required>
+                                <input type="text"  id="nik" onclick="validateNIK()" maxlength="16" class="form-control" placeholder="Masukan NIK" name="nik" aria-label="Recipient's username" aria-describedby="button-addon2" required>
                                 <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Cek Surat</button>
                               </div>
                         </form>
@@ -118,9 +121,9 @@
                             </td>
                             <td>
                                 @if($data->status == 2)
-                                    <a href="convert/{{$data->id_pengajuan}}" class="btn btn-success p-2"><i class="bi bi-printer"></i></a>
+                                    <a href="convert/{{$data->id_pengajuan}}" class="btn btn-outline-primary"><i class="bi bi-printer"></i></a>
                                 @else
-                                    <a class="btn btn-secondary p-2"><i class="bi bi-print"></i></a>
+                                <button type="button" class="btn btn-outline-primary" disabled><i class="bi bi-printer"></i></button>
                                 @endif
                             </td>
                         </tr>
@@ -139,29 +142,29 @@
     </div>
 </section>
 <hr>
-<section id="ajukan" class="ajukan">
+<section id="ajukan" class="ajukan section-bg">
     <div class="container" data-aos="fade-up">
         <div class="row">
             <div class="col d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
                 <div class="content">
-                    <h2>Silahkan ajukan surat anda disini</h2>
+                    <h2 style="font-weight: bolder;" >Silahkan ajukan surat anda disini</h2>
                     <p>
                         Pastikan check NIK anda terlebih dahulu agar bisa melihat kesesuaian data, jika adaperubahan
                         data silahkan <a href="#contact">hubungi admin</a>.
                     </p>
                 </div>
 
-                <div class="row mb-3">
+                <div class="row mb-3" id="carinik">
                     <div class="col-5">
-                        <form action="/search-data" method="GET">
+                        <form action="/search-data#ajukan" method="POST">
+                            @csrf
                             <div class="mb-3">
                                 <label for="nik" class="form-label">NIK</label>
                                 <div class="input-group mb-3">
                                     <input type="text" maxlength="16" class="form-control" name="nik" id="nik"
-                                        onclick="validateNIK()" placeholder="Masukan NIK"
-                                        aria-label="Recipient's username" aria-describedby="button-addon2">
-                                    <button class="btn btn-outline-primary" type="submit" id="button-addon2">Cari
-                                        Data</button>
+                                        onclick="validateNIK()" placeholder="Masukan NIK" aria-label="Recipient's username"
+                                        aria-describedby="button-addon2">
+                                    <button class="btn btn-outline-primary" type="submit" id="button-addon2">Cari Data</button>
                                 </div>
                                 <span id="error-label" style="color: red;"></span>
                             </div>
@@ -181,7 +184,7 @@
     <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-            <h2>Kontak Kami</h2>
+            <h2 style="font-weight: bolder;" >Kontak Kami</h2>
         </div>
 
         <div class="row">

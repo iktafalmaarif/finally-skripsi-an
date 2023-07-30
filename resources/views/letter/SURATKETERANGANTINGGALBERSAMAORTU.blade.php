@@ -60,7 +60,7 @@ div.WordSection1
 <div class=WordSection1>
 
 <p class=MsoHeader align=center style='margin-left:pt;text-align:center'><img
-width=83 height=100 src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Shield_of_Tegal_Regency.svg/242px-Shield_of_Tegal_Regency.svg.png"
+width=83 height=100 src="{{$logo}}"
 align=left hspace=12><span style='font-size:20.0pt;font-family:"Times New Roman",serif'>PEMERINTAH
 KABUPATEN TEGAL</span></p>
 
@@ -108,7 +108,7 @@ style='font-size:16.0pt;font-family:"Bookman Old Style",serif'> </span></u></b><
 
 <p class=MsoNormal align=center style='text-align:center'><span
 style='font-family:"Bookman Old Style",serif'>No</span><span lang=IN
-style='font-family:"Bookman Old Style",serif'>mor : 480 / 04 / 35 / V / 2021</span></p>
+style='font-family:"Bookman Old Style",serif'>mor : {{$data->nomor_surat}}</span></p>
 
 <p class=MsoNormal align=center style='text-align:center'><span lang=IN
 style='font-family:"Bookman Old Style",serif'>&nbsp;</span></p>
@@ -123,38 +123,38 @@ dengan ini menyatakan bahwa :</span></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:115%'><span
 lang=IN style='font-family:"Bookman Old Style",serif'>NIK                                 :
-3328116010860005</span></p>
+{{$data->nik}}</span></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:115%'><span
-lang=IN style='font-family:"Bookman Old Style",serif'>Nama                             :
-NOK TATI</span></p>
+lang=IN style='font-family:"Bookman Old Style",serif'>Nama                               :
+{{$data->nama_lengkap}}</span></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:115%'><span
 lang=IN style='font-family:"Bookman Old Style",serif'>Tempat, Tanggal Lahir   :
-Tegal, 20 Oktober 1986</span></p>
+{{$data->tempat_lahir}}, {{$data->tanggal_lahir}}</span></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:115%'><span
-lang=IN style='font-family:"Bookman Old Style",serif'>Jenis Kelamin                :
-Perempuan</span></p>
+lang=IN style='font-family:"Bookman Old Style",serif'>Jenis Kelamin                 :
+{{$data->jenis_kelamin}}</span></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:115%'><span
-lang=IN style='font-family:"Bookman Old Style",serif'>Kewarganegaraan          :
-Indonesia</span></p>
+lang=IN style='font-family:"Bookman Old Style",serif'>Kewarganegaraan           :
+{{$data->kewarganegaraan}}</span></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:115%'><span
-lang=IN style='font-family:"Bookman Old Style",serif'>Agama                            :
-Islam</span></p>
+lang=IN style='font-family:"Bookman Old Style",serif'>Agama                             :
+{{$data->agama}}</span></p>
 
 <p class=MsoNormal style='margin-left:.5in;text-align:justify;line-height:115%'><span
-lang=IN style='font-family:"Bookman Old Style",serif'>Pekerjaan                       :
--</span></p>
+lang=IN style='font-family:"Bookman Old Style",serif'>Pekerjaan                         :
+{{$data->pekerjaan}}</span></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:115%'><span
-lang=IN style='font-family:"Bookman Old Style",serif'>Alamat                            :
-Desa Pagiyanten RT 12 / RW 03</span></p>
+lang=IN style='font-family:"Bookman Old Style",serif'>Alamat                             :
+Desa Pagiyanten</span></p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'><span lang=IN
-style='font-family:"Bookman Old Style",serif'>                                                 
+style='font-family:"Bookman Old Style",serif'>                                                      
 Kecamatan Adiwerna Kabupaten Tegal</span></p>
 
 <p class=MsoNormal style='text-align:justify;line-height:115%'><span lang=IN
@@ -184,7 +184,7 @@ lang=IN style='font-family:"Bookman Old Style",serif'>&nbsp;</span></p>
 
 <p class=MsoNormal style='margin-left:318.95pt;text-align:justify;line-height:
 115%'><span lang=IN style='font-family:"Bookman Old Style",serif'>Pagiyanten,
-05 Mei 2021</span></p>
+{{ date('d') }} {{ date('M') }} {{ date('Y') }}</span></p>
 
 <p class=MsoNormal style='margin-left:318.95pt;text-align:justify;line-height:
 115%'><span lang=IN style='font-family:"Bookman Old Style",serif'>&nbsp;</span></p>
@@ -206,7 +206,7 @@ Pagiyanten</span></p>
 115%'><span lang=IN style='font-family:"Bookman Old Style",serif'>&nbsp;</span></p>
 
 <p class=MsoNormal style='margin-left:318.95pt;text-align:justify;text-indent:
-5.05pt;line-height:115%'><b><span lang=IN style='font-family:"Bookman Old Style",serif'>..................................</span></b></p>
+5.05pt;line-height:115%'><b><span lang=IN style='font-family:"Bookman Old Style",serif'>          S E G E R</span></b></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:115%'><span
 lang=IN>&nbsp;</span></p>

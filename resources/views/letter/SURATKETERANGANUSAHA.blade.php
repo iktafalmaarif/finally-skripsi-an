@@ -60,7 +60,7 @@ div.WordSection1
 <div class=WordSection1>
 
 <p class=MsoHeader align=center style='margin-left:pt;text-align:center'><img
-width=83 height=100 src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Shield_of_Tegal_Regency.svg/242px-Shield_of_Tegal_Regency.svg.png"
+width=83 height=100 src="{{$logo}}"
 align=left hspace=12><span style='font-size:20.0pt;font-family:"Times New Roman",serif'>PEMERINTAH
 KABUPATEN TEGAL</span></p>
 
@@ -165,8 +165,7 @@ style='font-size:8.0pt;line-height:150%'>&nbsp;</span></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
 150%'><span lang=IN>Bahwa menurut pengakuannya yang bersangkutan memiliki USAHA
-JUAL MAKANAN RINGAN di Pagiyanten RT 20. Usaha tersebut sudah berjalan kurang
-lebih 2 Tahun dan Usaha tersebut sampai sekarang masih berjalan.</span></p>
+{{$data->keperluan}} di Pagiyanten. Usaha tersebut sampai sekarang masih berjalan.</span></p>
 
 <p class=MsoNormal style='text-align:justify;line-height:150%'><span lang=IN
 style='font-size:8.0pt;line-height:150%'>&nbsp;</span></p>

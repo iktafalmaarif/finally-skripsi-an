@@ -9,9 +9,9 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Daftar Pengajuan</h4>
-                        <a href="/form-pengajuan" class="btn p-3 btn-primary mb-3">
+                        <!-- <a href="/form-pengajuan" class="btn p-3 btn-primary mb-3">
                             <i class="fa-regular fa-plus mr-2"></i>Tambah Pengajuan
-                        </a>
+                        </a> -->
                         <div class="table-responsive">
                             <table id="tabel-data" class="table table-striped table-bordered" width="100%"
                                 cellspacing="0">
@@ -40,7 +40,7 @@
                                                 data-bs-target="#ModalNo{{$data->id_pengajuan}}">
                                                Edit No Surat
                                             </button>
-                                            @include('dashboard.modalEditNo');
+                                            @include('dashboard.modalEditNo')
                                         @else
                                         {{$data->nomor_surat}}                                
                                         @endif 
@@ -76,7 +76,7 @@
                                         </td>
                                         <td>
                                             @if($data->status == NULL)
-                                            <a href="convert/{{$data->id_pengajuan}}" class="btn btn-success p-2"><i class="fa-solid fa-print"></i></a>
+                                            <a href="convert/{{$data->id_pengajuan}}" class="btn btn-secondary p-2"><i class="fa-solid fa-magnifying-glass"></i></a>
                                             @else
                                             @endif
                                         </td>

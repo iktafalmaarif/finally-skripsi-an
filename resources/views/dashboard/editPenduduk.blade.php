@@ -7,9 +7,8 @@
                 <div class="card">
                     <div class="card-body">
                     <h4 class="card-title">Data Penduduk</h4>
-                    @foreach($penduduk as $pd)
-                    <form action="form-pengajuan-penduduk-add" method="post" enctype="multipart/form-data">
-                        {{ csrf_field() }}
+                    <form action="/update/{{$pd->id_penduduk}}" enctype="multipart/form-data" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col">
                                 <div class="mb-3">
@@ -20,13 +19,13 @@
                             <div class="col">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">No. KK</label>
-                                    <input value="{{$pd->no_kk}}" type="text" class="form-control" name="nik" id="nik" placeholder="NIK" required>
+                                    <input value="{{$pd->no_kk}}" type="text" class="form-control" name="no_kk" id="no_kk" placeholder="No. KK" required>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Nama Lengkap</label>
-                                    <input value="{{$pd->nama_lengkap}}" type="text" class="form-control" name="namalengkap" id="namalengkap" placeholder="Nama Lengkap" required>
+                                    <input value="{{$pd->nama_lengkap}}" type="text" class="form-control" name="nama_lengkap" id="nama_lengkap" placeholder="Nama Lengkap" required>
                                 </div>
                             </div>
                         </div>
@@ -34,19 +33,19 @@
                             <div class="col-4">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Tempat Lahir</label>
-                                    <input value="{{$pd->tempat_lahir}}" type="text" class="form-control" name="tempatlahir" id="tempatlahir" placeholder="Tempat Lahir" required>
+                                    <input value="{{$pd->tempat_lahir}}" type="text" class="form-control" name="tempat_lahir" id="tempat_lahir" placeholder="Tempat Lahir" required>
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Tanggal Lahir</label>
-                                    <input value="{{$pd->tanggal_lahir}}" type="date" class="form-control" name="tanggallahir" id="tanggallahir" placeholder="Tanggal Lahir" required>
+                                    <input value="{{$pd->tanggal_lahir}}" type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir" placeholder="Tanggal Lahir" required>
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="mb-3">
                                     <label for="exampleSelectGender">Janis Kelamin</label>
-                                    <select class="form-control" name="jk" id="jk">
+                                    <select class="form-control" name="jenis_kelamin" id="jenis_kelamin">
                                         @if($pd->jenis_kelamin === 'Laki-Laki')
                                         <option selected value="Laki-Laki">Laki-Laki</option>
                                         <option value="Perempuan">Perempuan</option>
@@ -101,7 +100,7 @@
                             <div class="col">
                                 <div class="mb-3">
                                     <label for="exampleSelectGender">Status Perkawinan</label>
-                                    <select class="form-control" name="statusperkawinan" id="statusperkawinan">
+                                    <select class="form-control" name="status_perkawinan" id="status_perkawinan">
                                     @if($pd->status === 'Kawin')
                                         <option value="Wirausaha">Wirausaha</option>
                                         <option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
@@ -158,22 +157,18 @@
                                         <option value="WNI">WNI</option>
                                         <option selected value="WNA">WNA</option>
                                         @endif
-
-                                    <option value="WNI">WNI</option>
-                                    <option value="WNA">WNA</option>
                                     </select>              
                                 </div>
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Alamat</label>
-                            <textarea class="form-control" name="alamat" id="alamat">
-                                {{$pd->alamat}}
+                            <textarea class="form-control" name="alamat" id="alamat">{{$pd->alamat}}
                             </textarea>
                           </div>
-                    <button class="btn btn-primary"><i class="fa-solid fa-floppy-disk mr-2"></i>SIMPAN</button>
+                    <button class="btn btn-primary" ><i class="fa-solid mr-2"></i>SIMPAN</button>
                     </form>
-                    @endforeach
+                    
                     </div>
                 </div>
             </div>
@@ -187,4 +182,7 @@
           </div>
         </footer>
       </div>
+
+
+
 @endsection
